@@ -1,0 +1,26 @@
+#about #container {
+  width: 80%;
+  max-width: 800px;
+  margin: auto; }
+  #about #container h1 {
+    margin: 1em 0 0.8em 0;
+    padding-bottom: 0.2em;
+    font-weight: 300;
+    color: #000;
+    border-bottom: #DDD solid 1px; }
+  #about #container p {
+    font-weight: 300;
+    color: #444;
+    line-height: 180%; }
+  #about #container a {
+    text-decoration: none; }
+    #about #container a:hover {
+      text-decoration: none; }
+    #about #container a:visited {
+      text-decoration: none;
+      color: #0BE;
+      color: #0BE; }
+    #about #container a:hover {
+      color: #5DE; }
+
+/*# sourceMappingURL=about.css.map */
