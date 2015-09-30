@@ -4,12 +4,12 @@ $(document).ready(function() {
 			$('#map-frame').animate({
 				height: '300px',
 				'padding-bottom': '2em'
-			}, 500);
+			}, 400);
 		} else {
 			$('#map-frame').animate({
 				height: '0',
 				'padding-bottom': '0'
-			}, 500);
+			}, 400);
 		}
 	});
 });
