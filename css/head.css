@@ -33,6 +33,7 @@
     #head #text h2 {
       padding-left: 20px;
       font-size: 1.2em;
-      font-weight: 300; }
+      font-weight: 300;
+      display: inline; }
 
 /*# sourceMappingURL=head.css.map */
