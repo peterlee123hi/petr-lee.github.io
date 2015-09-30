@@ -13,14 +13,16 @@
     color: #444;
     line-height: 180%; }
   #about #container a {
-    text-decoration: none; }
-    #about #container a:hover {
-      text-decoration: none; }
+    text-decoration: none;
+    color: #0BE; }
     #about #container a:visited {
       text-decoration: none;
-      color: #0BE;
       color: #0BE; }
     #about #container a:hover {
-      color: #5DE; }
+      color: #5DE;
+      cursor: pointer; }
+
+#map {
+  margin: 2em 0; }
 
 /*# sourceMappingURL=about.css.map */

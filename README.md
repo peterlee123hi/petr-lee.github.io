@@ -1,4 +1,4 @@
-Typewriter
+# Typewriter
 	www.mattboldt.com
-Animated CSS Links
+## Animated CSS Links
 	http://tympanus.net/Development/CreativeLinkEffects/

@@ -17,6 +17,12 @@ html {
     font-size: 1em;
     line-height: 1.4;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
 }
 
 /*
