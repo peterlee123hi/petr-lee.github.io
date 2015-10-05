@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	/* GOOGLE MAPS */
 	$('#b-link').click(function() {
 		if($('#map-frame').height() == 0) {
 			$('#map-frame').animate({
