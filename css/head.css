@@ -44,4 +44,18 @@
       font-weight: 300;
       display: inline; }
 
+@media screen and (max-width: 620px) {
+  #head {
+    height: 280px; }
+    #head #profile-picture {
+      float: none;
+      margin: auto; }
+    #head #head-container {
+      text-align: center; } }
+@media screen and (max-width: 520px) {
+  #head #text h1 {
+    font-size: 3em; }
+  #head #text h2 {
+    font-size: 1em; } }
+
 /*# sourceMappingURL=head.css.map */

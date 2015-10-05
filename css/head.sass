@@ -23,6 +23,7 @@
 		border-radius: 50%
 		background: #FFF url('../img/profile.jpg') center
 		background-size: 86%
+		
 	#text
 		display: inline-block
 		transform: translateY(20%)
@@ -49,3 +50,20 @@
 			font-size: 1.2em
 			font-weight: 300
 			display: inline
+
+@media screen and (max-width: 620px)
+	#head
+		height: 280px
+		#profile-picture
+			float: none
+			margin: auto
+		#head-container
+			text-align: center
+
+@media screen and (max-width: 520px)
+	#head
+		#text
+			h1
+				font-size: 3em
+			h2
+				font-size: 1em

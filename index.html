@@ -65,8 +65,13 @@
         <script src="js/typed.js"></script>
         <script>
             $(function(){
+                sw = $(document).width();
+                var str = "Innovator, Aspiring Full Stack Developer &amp; Entrepeneur";
+                if(sw < 520) {
+                    str = 'Innovator, Developer, Entrepeneur';
+                }
                 $("#text h2").typed({
-                    strings: ["Innovator, Aspiring Full Stack Developer &amp; Entrepeneur"],
+                    strings: [str],
                     typeSpeed: 0
                 });
             });
