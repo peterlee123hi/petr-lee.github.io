@@ -4,8 +4,10 @@
     min-height: 200px;
     position: relative;
     margin: 0.5em 1em;
+    padding-top: 10px;
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: top;
+    opacity: 0; }
     #projects .project a {
       display: block; }
     #projects .project img {
