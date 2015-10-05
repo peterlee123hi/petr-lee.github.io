@@ -1,9 +1,11 @@
 #projects {
   text-align: center; }
   #projects .project {
+    min-height: 200px;
     position: relative;
     margin: 0.5em 1em;
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: top; }
     #projects .project a {
       display: block; }
     #projects .project img {
