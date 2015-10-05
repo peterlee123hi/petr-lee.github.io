@@ -3,6 +3,12 @@
 	margin: 1.2em auto;
 }
 
+.container {
+	width: 80%;
+	max-width: 800px;
+	margin: auto;
+}
+
 .light-text {
 	font-weight: 100;
 }

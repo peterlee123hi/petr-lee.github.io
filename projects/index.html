@@ -14,8 +14,7 @@
         <link rel="stylesheet" href="../css/custom.css">
         <link rel="stylesheet" href="../css/head.css">
         <link rel="stylesheet" href="../css/nav.css">
-        <link rel="stylesheet" href="../css/about.css">
-        <link rel="stylesheet" href="../css/contact.css">
+        <link rel="stylesheet" href="../css/projects.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/typecursor.css">
         <link rel="stylesheet" href="../css/main.css">
@@ -34,7 +33,7 @@
         </nav>
         
         <div id="head" class="section">
-            <div id="container">
+            <div id="head-container">
                 <div id="profile-picture"></div>
                 <div id="text">
                     <h1>PETER<span class="light-text">LEE</span></h1>
@@ -43,8 +42,21 @@
             </div>
         </div>
 
+        <div id="projects" class="section">
+            <div id="durd" class="project">
+                <a href="http://durd.herokuapp.com/" target="_blank" class="project-link">
+                <img src="../img/durd-logo.png" alt="Project Durd" width="180px" height="75px"></a>
+                <span><p class="project-desc">An chat app that pairs every two users anonymously and intelligently with a rating system. Built with: HTML, CSS, Node.js/Express, Socket.io</p></span>
+            </div>
+            <div id="moochr" class="project">
+                <a href="https://github.com/petr-lee/Moochr" target="_blank" class="project-link">
+                <img src="../img/moochr-logo.png" alt="Project Moochr" width="220px" height="75px"></a>
+                <span><p class="project-desc">An app that uses the Facebook API to locate events near a location that have free food. This was made at HackJam in 6 hours! Built with: HTML, SASS, jQuery, AJAX</p></span>
+            </div>
+        </div>
+
         <div id="footer" class="section">
-            <div id="container">
+            <div id="footer-container">
                 <h2>Made with &#9825; in Berkeley, CA. &copy; 2015 Peter Lee.</h2>
             </div>
         </div>
@@ -52,6 +64,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="../js/plugins.js"></script>
+        <script src="../js/animate-projects.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/typed.js"></script>
         <script>

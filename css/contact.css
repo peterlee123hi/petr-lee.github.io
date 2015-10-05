@@ -1,27 +1,23 @@
-#contact #container {
-  width: 80%;
-  max-width: 800px;
-  margin: auto; }
-  #contact #container h1 {
-    margin: 1em 0 0.2em 0;
-    padding-bottom: 0.2em;
-    font-weight: 300;
-    color: #000;
-    border-bottom: #DDD solid 1px; }
-  #contact #container h2 {
-    margin: 0.6em 0;
-    font-weight: 300;
-    color: #444;
-    line-height: 180%; }
-  #contact #container a {
-    text-decoration: none; }
-    #contact #container a:hover {
-      text-decoration: none; }
-    #contact #container a:visited {
-      text-decoration: none;
-      color: #0BE;
-      color: #0BE; }
-    #contact #container a:hover {
-      color: #5DE; }
+#contact h1 {
+  margin: 1em 0 0.2em 0;
+  padding-bottom: 0.2em;
+  font-weight: 300;
+  color: #000;
+  border-bottom: #DDD solid 1px; }
+#contact h2 {
+  margin: 0.6em 0;
+  font-weight: 300;
+  color: #444;
+  line-height: 180%; }
+#contact a {
+  text-decoration: none;
+  margin-right: 1em; }
+  #contact a:hover {
+    text-decoration: none;
+    opacity: 0.8; }
+#contact #facebook-link, #contact #facebook-link:hover, #contact #facebook-link:visited {
+  color: #3b5998; }
+#contact #github-link, #contact #github-link:hover, #contact #github-link:visited {
+  color: #000; }
 
 /*# sourceMappingURL=contact.css.map */
