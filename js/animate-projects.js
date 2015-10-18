@@ -3,9 +3,14 @@ $(document).ready(function() {
 		'opacity': 1,
 		'padding-top': '0'
 	}, 500, 'linear', function() {
-			$('#moochr').animate({
+		$('#moochr').animate({
 			'opacity': 1,
 			'padding-top': '0'
-		}, 500, 'linear');
+		}, 500, 'linear', function() {
+			$('#drawtime').animate({
+				'opacity': 1,
+				'padding-top': '0'
+			}, 500, 'linear');
+		});
 	});
 });
