@@ -5,7 +5,7 @@
   #head #head-container {
     position: absolute;
     display: inline-block;
-    min-width: 600px;
+    min-width: 640px;
     margin: auto;
     left: 50%;
     transform: translateX(-50%); }
