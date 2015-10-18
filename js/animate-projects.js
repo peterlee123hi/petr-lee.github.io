@@ -10,7 +10,12 @@ $(document).ready(function() {
 			$('#drawtime').animate({
 				'opacity': 1,
 				'padding-top': '0'
-			}, 500, 'linear');
+			}, 500, 'linear', function() {
+				$('#uil').animate({
+					'opacity': 1,
+					'padding-top': '0'
+				}, 500, 'linear');
+			});
 		});
 	});
 });
