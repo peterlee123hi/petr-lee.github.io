@@ -14,8 +14,9 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/custom-header.css">
 	<link rel="stylesheet" href="css/custom-nav.css">
-	<link rel="stylesheet" href="css/custom-icons.css">
+	<link rel="stylesheet" href="css/custom-resume.css">
 	<link rel="stylesheet" href="css/custom-footer.css">
+	<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="css/typecursor.css">
 </head>
 <body class="bg-dark-gray">
@@ -43,6 +44,7 @@
 
 	<section class="bg-gray" id="custom-head">
 		<div id="particles-js"></div>
+
 		<div id="custom-head-container">
 			<div class="circular" id="custom-profile"></div>
 			<div id="custom-head-text">
@@ -52,28 +54,28 @@
 		</div>
 	</section>
 
-	<section>
-		<div class="container text-white article">
-			<h1>About Me</h1>
-			<p>Hi! I'm Peter, a freshman at <a id="b-link">University of California, Berkeley</a> pursuing a degree in Computer Science. In my spare time, I explore the latest web development frameworks, practice the cello for <a href="http://orchestra.berkeley.edu/" target="_blank">UCBSO</a>, and study algorithms for competitive programming.</p>
+	<section id="custom-resume-display" class="center">
+		<div id="custom-resume-text" class="text-white left inline-block pure-u-1-3">
+			<h1>Resume</h1>
+			<p>For a formal, comprehensive document of what I've done throughout college so far, here is my resume!</p>
 		</div>
+		<a href="docs/technical-resume.pdf" target="_blank">
+				<img id="custom-resume-img" src="img/resume.png" alt="Resume" class="inline-block pure-u-1-2 z1">
+		</a>
+	</section>
 
-		<div id="map" style="width: 100%;margin:0"><iframe id="map-frame" width="100%" height="0" src="http://www.maps.ie/create-google-map/map.php?width=100%&amp;height=300&amp;hl=en&amp;coord=37.871870,-122.258438&amp;q=Berkeley%2C%20CA%2094720+(UC%20Berkeley)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.maps.ie/create-google-map/">Embed Google Map</a> by <a href="http://www.maps.ie/">Maps.ie</a></iframe></div>
-
-		<section class="text-white center">
-			<div class="icon-wrapper align-top">
-				<div id="webdev-icon" class="icon block-center circular"></div>
-				<p class="icon-desc">I'm a MEAN developer. (without the A just yet...)</p>
-			</div>
-			<div class="icon-wrapper align-top">
-            	<div id="design-icon" class="icon block-center circular"></div>
-	            <p class="icon-desc">I love to design my own icons using Adobe Illustrator!</p>
-	        </div>
-	        <div class="icon-wrapper align-top">
-	            <div id="programming-icon" class="icon block-center circular"></div>
-	            <p class="icon-desc">I study algorithms in Java, Python, and C++.</p>
-	        </div>
-		</section>
+	<section class="bg-gray z3 center">
+		<div class="inline-block left">
+			<form action="MAILTO:peter.lee@berkeley.edu" method="post" enctype="text/plain">
+				<p class="heavy-text text-white large-text">Name</p>
+				<input type="text" name="name">
+				<p class="heavy-text text-white large-text">E-mail</p>
+				<input type="text" name="mail">
+				<p class="heavy-text text-white large-text">Message</p>
+				<textarea type="text" name="comment"></textarea>
+				<input type="submit" value="Send" class="bg-white">
+			</form>
+		</div>
 	</section>
 	
 	<div class="footer-block"></div>

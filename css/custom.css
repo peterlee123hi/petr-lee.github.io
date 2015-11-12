@@ -1,14 +1,201 @@
-.section {
-	width: 100%;
-	margin: 1.2em auto;
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	position: relative;
+}
+
+.bg-black { background-color: #111; }
+.bg-dark-gray { background-color: #222; }
+.bg-gray { background-color: #3a3a3a; }
+.bg-light-gray { background-color: #555; }
+.bg-white { background-color: white; }
+.heavy-text { font-weight: 600; }
+.light-text { font-weight: 300; }
+.super-light-text { font-weight: 100; }
+.circular { border-radius: 50%; }
+.text-magenta { color: #d25252; }
+.text-green { color: #7fb347; }
+.text-white { color: white; }
+.center { text-align: center; }
+.right { text-align: right; }
+.left { text-align: left; }
+.block { display: block; }
+.inline-block {display: inline-block; }
+.block-center { margin: auto; }
+.z-1 { z-index: -1; }
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+.z3 { z-index: 3; }
+.align-top {
+	position: relative;
+	vertical-align: top;
 }
 
 .container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-block {
+    height: 32px;
+}
+
+.article {
 	width: 80%;
 	max-width: 800px;
 	margin: auto;
 }
 
-.light-text {
-	font-weight: 100;
+section {
+	width: 100%;
+	padding: 1.2em 0;
+	position: relative;
+}
+
+.contain-side-menu {
+	position: relative;
+    padding-left: 0;
+
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.side-menu {
+    margin-left: -240px;
+    width: 240px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #191818;
+    -webkit-overflow-scrolling: touch;
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.side-menu-toggle {
+	position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.7);
+    font-size: 11px;
+    z-index: 10;
+    width: 2em;
+    height: 2em;
+    padding: .5em;
+}
+
+.side-menu-toggle span:before, 
+.side-menu-toggle span:after {
+    position: absolute;
+    top: -.55em;
+    content: " ";
+}
+
+.side-menu-toggle span:after {
+	top: .55em;
+}
+
+.side-menu-toggle span,
+.side-menu-toggle span:before, 
+.side-menu-toggle span:after {
+	background-color: #fff;
+    width: 100%;
+    height: .2em;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.side-menu-toggle span {
+	position: relative;
+    display: block;
+    margin-top: 0.9em;
+}
+
+.contain-side-menu.active,
+.side-menu.active {
+	left: 240px;
+}
+
+@media screen and (min-width: 58em) {
+	.contain-side-menu {
+	    padding-left: 240px;
+	    left: 0;
+	}
+
+	.side-menu {
+    	left: 240px;
+	}
+
+	.side-menu-toggle {
+	    position: relative;
+	    left: 240px;
+	    display: none;
+	}
+}
+
+.side-menu-toggle.active span {
+    background: transparent;
+}
+
+.side-menu-toggle.active span:before {
+    -webkit-transform: rotate(45deg) translate(.5em, .4em);
+       -moz-transform: rotate(45deg) translate(.5em, .4em);
+        -ms-transform: rotate(45deg) translate(.5em, .4em);
+         -o-transform: rotate(45deg) translate(.5em, .4em);
+            transform: rotate(45deg) translate(.5em, .4em);
+}
+
+.side-menu-toggle.active span:after {
+    -webkit-transform: rotate(-45deg) translate(.4em, -.3em);
+       -moz-transform: rotate(-45deg) translate(.4em, -.3em);
+        -ms-transform: rotate(-45deg) translate(.4em, -.3em);
+         -o-transform: rotate(-45deg) translate(.4em, -.3em);
+            transform: rotate(-45deg) translate(.4em, -.3em);
+}
+
+.project {
+	position: relative;
+    margin: 0.5em 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.project img {
+	-webkit-transition: opacity 0.5s ease;
+	-moz-transition: opacity 0.5s ease;
+	-o-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+}
+
+.project img:hover {
+	cursor: pointer;
+	opacity: 0.4;
+}
+
+.project .project-desc {
+	max-width: 400px;
+	margin: 1em 0.5em;
+	padding-left: 10px;
+	font-weight: 300;
+}
+
+.responsive-img {
+    width: 60%;
+    min-width: 280px;
 }

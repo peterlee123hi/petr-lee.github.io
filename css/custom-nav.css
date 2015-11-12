@@ -1,0 +1,81 @@
+#nav-container {
+    height: 44.5938px;
+}
+
+.custom-wrapper {
+    -webkit-font-smoothing: antialiased;
+    height: 43.5938px;
+    overflow: hidden;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+.custom-wrapper.open {
+    /* Change to 320px when including CS61A and Algorithms page. */
+    display: inline;
+}
+
+.custom-toggle {
+    width: 43.5398px;
+    height: 43.5398px;
+    margin: auto;
+    display: none;
+}
+
+.custom-toggle .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 100px;
+    position: absolute;
+    top: 25px;
+    right: 50%;
+    background-color: white;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.custom-toggle .bar:first-child {
+    top: 15px;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+.custom-toggle.x .bar {
+    -webkit-transform: translateX(50%) rotate(45deg);
+    -moz-transform: translateX(50%) rotate(45deg);
+    -ms-transform: translateX(50%) rotate(45deg);
+    transform: translateX(50%) rotate(45deg);
+}
+
+.custom-toggle.x .bar:first-child {
+    top: 25px;
+    -webkit-transform: translateX(50%) rotate(-45deg);
+    -moz-transform: translateX(50%) rotate(-45deg);
+    -ms-transform: translateX(50%) rotate(-45deg);
+    transform: translateX(50%) rotate(-45deg);
+}
+
+#nav-row {
+    display: none;
+}
+
+@media (max-width: 820px) {
+    .custom-toggle {
+        display: block;
+    }
+
+    #nav-row {
+        display: block;
+    }
+}

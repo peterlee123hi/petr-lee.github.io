@@ -1,0 +1,58 @@
+form > p {
+	margin: 1.6em 0 0.5em 0;
+}
+
+form > input,
+form > textarea {
+	border: 4px #333 solid;
+	padding: 4px;
+
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+form > textarea {
+	width: 600px;
+	height: 200px;
+}
+
+form > input:focus,
+form > textarea:focus {
+	outline: none;
+	border: 4px #666 solid;
+}
+
+form > input[type="submit"] {
+	display: block;
+	border: none;
+	padding: 0.4em;
+	margin-top: 0.6em;
+	border-radius: 5px;
+
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+form > input[type="submit"]:hover {
+	background-color: red;
+}
+
+@media screen and (max-width: 660px) {
+	form > textarea {
+		width: 400px;
+		height: 133px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	form > textarea {
+		width: 240px;
+		height: 100px;
+	}
+}

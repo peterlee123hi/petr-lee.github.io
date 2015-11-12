@@ -1,0 +1,23 @@
+footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+footer p {
+	padding: 0.2em;
+	padding-left: 8px;
+	margin: 0;
+	line-height: 25.375px;
+}
+
+.footer-link {
+	padding: 0.2em;
+	padding-right: 10px;
+	font-size: 1.2em;
+	color: white;
+	line-height: 25.375px;
+}
+
+.footer-link:hover {
+	color: red;
+}

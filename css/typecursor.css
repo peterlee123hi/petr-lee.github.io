@@ -1,7 +1,7 @@
 .typed-cursor{
 	opacity: 1;
 	font-size: 1.4em;
-	color: #DC143C;
+	color: #fff;
 	-webkit-animation: blink 0.7s infinite;
 	-moz-animation: blink 0.7s infinite;
 	animation: blink 0.7s infinite;

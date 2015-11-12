@@ -1,0 +1,56 @@
+#custom-resume-display {
+	height: 12em;
+}
+
+#custom-resume-text {
+	padding-right: 2em;
+}
+
+#custom-resume-img {
+	position: relative;
+	bottom: -55px;
+
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#custom-resume-img:hover {
+	bottom: -20px;
+}
+
+@media screen and (max-width: 680px) {
+	#custom-resume-text {
+		text-align: center;
+		width: 80%;
+		margin: auto;
+	}
+
+	#custom-resume-img {
+		width: 80%;
+		bottom: -25px;
+	}
+
+	#custom-resume-img:hover {
+		bottom: -10px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#custom-resume-text {
+		text-align: center;
+		width: 80%;
+		margin: auto;
+	}
+
+	#custom-resume-img {
+		width: 90%;
+		bottom: -15px;
+	}
+
+	#custom-resume-img:hover {
+		bottom: 0;
+	}
+}
