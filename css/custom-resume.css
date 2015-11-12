@@ -36,6 +36,10 @@
 	#custom-resume-img:hover {
 		bottom: -10px;
 	}
+
+	#custom-resume-display {
+		height: 14em;
+	}
 }
 
 @media screen and (max-width: 480px) {
