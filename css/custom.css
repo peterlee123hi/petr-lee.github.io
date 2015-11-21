@@ -214,3 +214,13 @@ section {
     margin: 0.5em;
     padding: 0.5em;
 }
+
+.header {
+    max-width: 90%;
+}
+
+@media screen and (max-width: 30em) {
+    .header {
+        font-size: 1.2em;
+    }
+}

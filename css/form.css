@@ -1,5 +1,14 @@
-form > p {
+form > p,
+form > label {
 	margin: 1.6em 0 0.5em 0;
+}
+
+form > label {
+	display: block;
+}
+
+form span {
+	color: red;
 }
 
 form > input,
@@ -25,7 +34,8 @@ form > textarea:focus {
 	border: 4px #666 solid;
 }
 
-form > input[type="submit"] {
+form > input[type="submit"],
+form > input[type="button"] {
 	display: block;
 	border: none;
 	padding: 0.4em;
@@ -39,7 +49,8 @@ form > input[type="submit"] {
     transition: all 0.2s ease-out;
 }
 
-form > input[type="submit"]:hover {
+form > input[type="submit"]:hover,
+form > input[type="button"]:hover {
 	background-color: red;
 }
 
