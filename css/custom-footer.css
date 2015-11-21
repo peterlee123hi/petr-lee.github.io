@@ -21,3 +21,15 @@ footer p {
 .footer-link:hover {
 	color: red;
 }
+
+@media screen and (max-width: 365px) {
+	.footer-block {
+		height: 56.375px;
+	}
+}
+
+@media screen and (max-width: 322px) {
+	.footer-block {
+		height: 64px;
+	}
+}
