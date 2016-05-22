@@ -1,0 +1,79 @@
+/* Global */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'Lato', sans-serif;
+	color: white;
+	font-weight: normal;
+	font-size: 16px;
+	text-decoration: none;
+	line-height: 28px;
+}
+
+* {
+	-webkit-margin-after: 0;
+	-webkit-margin-before: 0;
+}
+
+body > section {
+	padding: 150px 0;
+	width: 100%;
+	background-color: white;
+}
+
+/* Header */
+section.primary-nav {
+	background-color: white;
+	height: 54px;
+	padding: 24px 0 0 0;
+	border-bottom: 1px #666 solid;
+}
+
+section.primary-nav nav {
+	width: 940px;
+	margin: 0 auto;
+	-webkit-transition: width .2s ease;
+	-moz-transition: width .2s ease;
+	transition: width .2s ease;
+}
+
+.primary-nav a.logo {
+	width: 120px;
+	height: 120px;
+	background: url('../img/personal_logo.svg') no-repeat 0 -2px;
+	background-size: 100% auto;
+	float: left;
+	padding: 0;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.primary-nav a {
+	display: block;
+	float: right;
+	color: #666;
+	letter-spacing: 0.1px;
+	font-size: 14px;
+	padding: 0 20px;
+	-webkit-transition: margin 0.2s ease;
+	-moz-transition: margin 0.2s ease;
+	transition: margin 0.2s ease;
+} 
+
+section.primary-nav::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+section.cover {
+	padding: 0;
+}
+
+section.cover img {
+	width: 101%;
+}
