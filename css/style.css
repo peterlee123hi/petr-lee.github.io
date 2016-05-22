@@ -167,6 +167,38 @@ section.portfolio img {
 }
 
 /* Misc. */
+#overlay {
+	display: none;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.9);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+#overlay img {
+	width: 60%;
+	height: auto;
+	margin: 3em 0;
+	display: inline-block;
+}
+
+h6 {
+	position: fixed;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    transition: 0.5s ease;
+    top: 15px;
+    left: 30px;
+}
+
 .progress-sign {
 	position: relative;
 	width: 160px;
