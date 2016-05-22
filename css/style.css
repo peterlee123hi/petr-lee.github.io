@@ -130,3 +130,39 @@ div.about-wrapper article p {
 	text-align: left;
 	color: #eee;
 }
+
+/* portfolio */
+section.portfolio {
+	position: relative;
+	top: -70px;
+	padding: 40px 0;
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+section.portfolio div.header-wrapper {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+section.portfolio h3 {
+	font-size: 2.4em;
+	font-weight: 300;
+	color: #222;
+	margin: 2em 0;
+	margin-bottom: 1.4em;
+	display: inline-block;
+}
+
+section.portfolio img {
+	position: relative;
+	width: 300px;
+	margin: 8px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px black solid;
+	top: 0;
+}
