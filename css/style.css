@@ -57,12 +57,20 @@ section.primary-nav nav {
 	float: right;
 	color: #666;
 	letter-spacing: 0.1px;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 0 20px;
 	-webkit-transition: margin 0.2s ease;
 	-moz-transition: margin 0.2s ease;
 	transition: margin 0.2s ease;
-} 
+}
+
+.primary-nav a:hover {
+	color: #111;
+}
+
+.primary-nav a:active {
+	color: #dc3522;
+}
 
 section.primary-nav::after {
 	content: '';
@@ -71,9 +79,8 @@ section.primary-nav::after {
 }
 
 section.cover {
+	position: relative;
+	top: -65px;
+	display: inline-block;
 	padding: 0;
-}
-
-section.cover img {
-	width: 101%;
 }
