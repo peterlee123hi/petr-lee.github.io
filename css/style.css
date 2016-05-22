@@ -26,7 +26,6 @@ body > section {
 
 /* Header */
 section.primary-nav {
-	background-color: white;
 	height: 54px;
 	padding: 24px 0 0 0;
 	border-bottom: 1px #666 solid;
@@ -83,4 +82,41 @@ section.cover {
 	top: -65px;
 	display: inline-block;
 	padding: 0;
+}
+
+/* About */
+section.about {
+	position: relative;
+	top: -70px;
+	padding: 120px 0;
+	background-color: #1E1E20;
+}
+
+div.about-wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+div.about-wrapper article {
+	width: 257px;
+	margin: 0 30px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.about-wrapper article h2 {
+	margin: 1.4em 0;
+	margin-bottom: 0.2em;
+	font-size: 1.6em;
+	font-weight: 700;
+	text-align: center;
+	color: #eee;
+}
+
+div.about-wrapper article p {
+	margin: 1.4em 0;
+	width: 100%;
+	font-size: 1em;
+	text-align: left;
+	color: #eee;
 }
