@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6, a, p {
 	line-height: 28px;
 }
 
+a:hover, a:active {
+	cursor: pointer;
+}
+
 * {
 	-webkit-margin-after: 0;
 	-webkit-margin-before: 0;
@@ -93,15 +97,22 @@ section.about {
 }
 
 div.about-wrapper {
-	width: 960px;
+	width: 1000px;
 	margin: 0 auto;
 }
 
 div.about-wrapper article {
 	width: 257px;
-	margin: 0 30px;
+	margin: 0 36px;
 	display: inline-block;
 	vertical-align: top;
+	text-align: center;
+}
+
+div.about-wrapper article img {
+	display: inline-block;
+	width: 80%;
+	height: auto;
 }
 
 div.about-wrapper article h2 {
@@ -109,7 +120,6 @@ div.about-wrapper article h2 {
 	margin-bottom: 0.2em;
 	font-size: 1.6em;
 	font-weight: 700;
-	text-align: center;
 	color: #eee;
 }
 
