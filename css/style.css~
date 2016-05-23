@@ -321,7 +321,7 @@ section.contact div#email-display {
 
 section.contact p#email-popup {
 	position: relative;
-	top: -3em;
+	top: -2em;
 	display: inline-block;
 	background-color: #1e1e20;
 	padding: 2px 8px;
