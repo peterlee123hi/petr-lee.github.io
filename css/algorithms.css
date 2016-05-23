@@ -1,0 +1,19 @@
+section.primary-nav {
+	height: inherit;
+	padding: 0;
+	padding-top: 38px;
+}
+
+section.primary-nav nav {
+	text-align: center;
+	width: auto;
+}
+
+section.primary-nav a.logo {
+	float: none;
+	display: block;
+	margin: auto;
+	background: url('../img/personal_logo.svg') no-repeat 0 -56px;
+	background-size: 100%;
+	height: 42px;
+}
