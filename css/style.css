@@ -88,6 +88,14 @@ section.cover {
 	padding: 0;
 }
 
+section.cover img#cover-img {
+	display: block;
+}
+
+section.cover img#alt-cover-img {
+	display: none;
+}
+
 @media(max-width: 1000px) {
 	section.primary-nav nav {
 		width: 760px;
@@ -131,6 +139,14 @@ section.cover {
 		background: url('../img/personal_logo.svg') no-repeat 0 -56px;
 		background-size: 100%;
 		height: 42px;
+	}
+
+	section.cover img#cover-img {
+		display: none;
+	}
+
+	section.cover img#alt-cover-img {
+		display: block;
 	}
 }
 
