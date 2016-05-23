@@ -52,4 +52,8 @@ $(document).ready(function(){
 	}, function() {
 		$('#email-popup').fadeOut(400);
 	});
+
+	$('#resume-link').click(function() {
+		window.open('./docs/resume.pdf', '_blank');
+	});
 });
