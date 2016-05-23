@@ -264,7 +264,8 @@ section.portfolio {
 	position: relative;
 	top: -70px;
 	padding: 40px 0;
-	width: 960px;
+	max-width: 960px;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 }
