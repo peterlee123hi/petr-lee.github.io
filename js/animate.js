@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$('#email-popup').hide();
+
 	$('#about-link').click(function() {
 		$('html, body').animate({
 	        scrollTop: $('section.about').offset().top
@@ -14,7 +16,13 @@ $(document).ready(function(){
 	$('#web-link').click(function() {
 		$('html, body').animate({
 	        scrollTop: $('section#web-portfolio').offset().top
-	    }, 1400);
+	    }, 1500);
+	});
+
+	$('#contact-link').click(function() {
+		$('html, body').animate({
+	        scrollTop: $('section.contact').offset().top
+	    }, 2000);
 	});
 
 	$('section.portfolio img').hover(function(){
@@ -37,5 +45,11 @@ $(document).ready(function(){
 			$('#overlay img').remove();
 			$('#overlay').hide();
 		});
+	});
+
+	$('#email-link').hover(function() {
+		$('#email-popup').fadeIn(400);
+	}, function() {
+		$('#email-popup').fadeOut(400);
 	});
 });
