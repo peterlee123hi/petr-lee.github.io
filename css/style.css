@@ -316,7 +316,7 @@ section.contact i:hover {
 
 section.contact div#email-display {
 	position: relative;
-	top: -32px;
+	top: -2em;
 	height: 0;
 }
 
