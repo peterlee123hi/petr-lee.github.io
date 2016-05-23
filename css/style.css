@@ -55,9 +55,14 @@ section.primary-nav nav {
     transform: translateY(-50%);
 }
 
-.primary-nav a {
+.primary-nav div.link-wrapper {
 	display: block;
 	float: right;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.primary-nav a {
 	color: #666;
 	letter-spacing: 0.1px;
 	font-size: 15px;
@@ -127,9 +132,8 @@ section.cover img#alt-cover-img {
 		width: auto;
 	}
 
-	section.primary-nav a {
+	.primary-nav div.link-wrapper {
 		float: none;
-		display: inline-block;
 	}
 
 	section.primary-nav a.logo {
