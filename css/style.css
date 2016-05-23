@@ -409,3 +409,16 @@ h6 {
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* ERASE UIL */
+#uil-link {
+	color: white;
+	-webkit-transition: color .2s ease;
+	   -moz-transition: color .2s ease;
+	        transition: color .2s ease;
+}
+
+#uil-link:hover {
+	cursor: pointer;
+	color: #ffc0a9;
+}

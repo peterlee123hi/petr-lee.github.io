@@ -56,4 +56,8 @@ $(document).ready(function(){
 	$('#resume-link').click(function() {
 		window.open('./docs/resume.pdf', '_blank');
 	});
+
+	$('#uil-link').click(function() {
+		window.open('./docs/uil.pdf', '_blank');
+	});
 });
