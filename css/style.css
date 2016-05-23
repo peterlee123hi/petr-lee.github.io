@@ -295,6 +295,21 @@ section.portfolio img {
 	border: 1px black solid;
 }
 
+/* Contacts */
+footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0.8em 0;
+	text-align: center;
+	background-color: #35478c;
+}
+
+footer p {
+	color: white;
+}
+
 /* Misc. */
 #overlay {
 	display: none;
