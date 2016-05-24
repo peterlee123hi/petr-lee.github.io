@@ -21,6 +21,7 @@ section.primary-nav a.logo {
 div.display-wrapper {
 	padding: 0 2em;
 	padding-top: 1em;
+	text-align: center;
 }
 
 div.topic-display {
