@@ -17,3 +17,38 @@ section.primary-nav a.logo {
 	background-size: 100%;
 	height: 42px;
 }
+
+div.topic-display {
+	color: white;
+	display: inline-block;
+	margin: 0;
+	padding: 2em;
+	background-color: #2a2c2b;
+	text-align: center;
+}
+
+div.topic-display h1 {
+	font-size: 1.8em;
+	font-weight: 700;
+	margin: 0.5em 0;
+}
+
+div.topic-display ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+div.topic-display ul li {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.4em;
+	cursor: pointer;
+	font-weight: 400;
+}
+
+div.topic-display ul li:hover {
+	font-weight: 700;
+}
+
+.selected {
+	color: #E74C3C;
+}
