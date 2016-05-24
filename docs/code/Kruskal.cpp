@@ -71,6 +71,7 @@ int main() {
 
 	int total = 0;
 	UnionFind uf(n);
+	vector<vii> AdjList(n);
 
 	rep(i, 0, m) {
 		pair<int, ii> e = EdgeList[i];
@@ -78,6 +79,8 @@ int main() {
 		if(!uf.isSameSet(u, v)) {
 			total += w;
 			uf.unionSet(u, v);
+			AdjList[u].pb(ii(v, w));
+			AdjList[v].pb(ii(u, w));
 		}
 	}
 
