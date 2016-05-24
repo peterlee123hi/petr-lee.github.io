@@ -25,6 +25,7 @@ div.display-wrapper {
 }
 
 div.topic-display {
+	vertical-align: top;
 	color: white;
 	display: inline-block;
 	margin: 0;
