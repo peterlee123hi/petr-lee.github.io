@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/algorithms.css">
+	<link rel="stylesheet" href="css/editor.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 	<section class="primary-nav">
@@ -20,6 +22,23 @@
 		</nav>
 	</section>
 
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-12 col-sm-12 codeSide">
+	      <div class="row">
+	        <div class="col-md-12 col-sm-12">
+	          <div class="compile-code">
+	            <pre name="code" id="editor" style="border: none;"></pre>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"></script>
+	<script src="js/editor.js"></script>
 </body>
 </html>
