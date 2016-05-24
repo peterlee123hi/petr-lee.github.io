@@ -85,4 +85,6 @@ int main() {
 	}
 
 	printf("Weight of Minimum Spanning Tree: %d\n", total);
+	// Note: MST is represented by the AdjList.
+	exit(0);
 }
