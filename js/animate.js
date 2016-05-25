@@ -53,6 +53,20 @@ $(document).ready(function(){
 		$('#email-popup').fadeOut(400);
 	});
 
+	$('section#web-portfolio div.web-cover p').hover(function() {
+		$(this).css('color', 'red');
+	}, function() {
+		$(this).css('color', 'white');
+	});
+
+	$('#unrac-link').click(function() {
+		window.open('https://github.com/UNRAC/unrac.github.io', '_blank');
+	});
+
+	$('#globaltoday-link').click(function() {
+		window.open('https://github.com/petr-lee/GlobalToday', '_blank');
+	});
+
 	$('#resume-link').click(function() {
 		window.open('./docs/resume.pdf', '_blank');
 	});
