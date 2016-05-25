@@ -57,6 +57,10 @@ $(document).ready(function(){
 		window.open('./docs/resume.pdf', '_blank');
 	});
 
+	$('#github-link').click(function() {
+		window.open('https://github.com/petr-lee', '_blank');
+	});
+
 	$('#uil-link').click(function() {
 		window.open('./docs/uil.pdf', '_blank');
 	});
