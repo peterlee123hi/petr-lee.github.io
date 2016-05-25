@@ -59,6 +59,10 @@ $(document).ready(function(){
 		$(this).css('color', 'white');
 	});
 
+	$('#fzcf-link').click(function() {
+		window.open('https://github.com/fzcf/fzcf.github.io', '_blank');
+	});
+
 	$('#unrac-link').click(function() {
 		window.open('https://github.com/UNRAC/unrac.github.io', '_blank');
 	});
