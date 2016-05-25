@@ -18,7 +18,6 @@ int memo[1000];
 
 int V, n, denomination[100];
 
-// returns minimum # of coins to give change
 int change(int value) {
 	if(value == 0) return 0;
 	if(value < 0) return INF;
