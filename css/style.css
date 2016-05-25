@@ -306,12 +306,12 @@ section.contact {
 }
 
 section.contact i {
-	padding: 9px;
+	padding: 16px;
 	margin: 16px 12px;
-	border-radius: 5px;
+	border-radius: 50%;
 	font-size: 32px;
-	color: white;
-	background-color: #f2594b;
+	color: #2a2b2c;
+	background-color: white;
 }
 
 section.contact i:hover {
