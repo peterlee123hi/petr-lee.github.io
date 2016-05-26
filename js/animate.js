@@ -54,15 +54,15 @@ $(document).ready(function(){
 	});
 
 	var link;
-	var link_addr;
 	$('section#web-portfolio div.web-cover p').hover(function() {
 		$(this).css('color', 'red');
 		link = $(this).closest('a');
-		link_addr = link.attr('href');
-		link.attr('href', '');
+		link.bind('click', function(e){
+		  e.preventDefault();
+		});
 	}, function() {
 		$(this).css('color', 'white');
-		link.attr('href', link_addr);
+		link.unbind('click');
 	});
 
 	$('#fzcf-link').click(function() {
