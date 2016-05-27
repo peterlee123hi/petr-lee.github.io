@@ -25,7 +25,7 @@ vi dfs_status; // Initialize to UNVISITED.
 // Basic DFS traversal.
 void dfs(int u) {
     dfs_status[u] = VISITED;
-    rep(j, 0, sz(AdjList)) {
+    rep(j, 0, sz(AdjList[u])) {
         ii e = AdjList[u][j];
         int v = e.fi;
         if(dfs_status[v] == UNVISITED) {
