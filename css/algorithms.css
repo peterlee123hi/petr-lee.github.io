@@ -29,7 +29,7 @@ div.topic-display {
 	color: white;
 	display: inline-block;
 	margin: 0;
-	padding: 2em;
+	padding: 0.2em 0.8em;
 	background-color: #2a2c2b;
 	text-align: center;
 	border-radius: 5px;
@@ -42,16 +42,22 @@ div.topic-display h1 {
 	margin: 0.5em 0;
 }
 
+div.topic-display h1:hover {
+	cursor: pointer;
+}
+
 div.topic-display ul {
 	padding: 0;
 	list-style-type: none;
 }
 
 div.topic-display ul li {
+	padding: 0.5em;
 	font-family: 'Lato', sans-serif;
 	font-size: 1.4em;
 	cursor: pointer;
 	font-weight: 400;
+	color: #222;
 }
 
 div.topic-display ul li:hover {
