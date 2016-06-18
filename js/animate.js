@@ -53,6 +53,12 @@ $(document).ready(function(){
 		$('#email-popup').fadeOut(400);
 	});
 
+        $('#email-link').click(function() {
+            var email = 'peter.lee@berkeley.edu';
+            var subject = 'Hi, Peter!';
+            window.open('mailto:' + email + '?subject=' + subject, '_blank');
+        });
+
 	var link;
 	$('section#web-portfolio div.web-cover p').hover(function() {
 		$(this).css('color', 'red');
