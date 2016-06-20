@@ -297,7 +297,7 @@ section.portfolio h3 {
 
 section.portfolio img {
 	position: relative;
-	width: 260px;
+	width: 278px;
 	margin: 8px;
 	cursor: pointer;
 	display: inline-block;
@@ -305,23 +305,23 @@ section.portfolio img {
 	border: 1px black solid;
 }
 
-section#web-portfolio div.web-item {
+section.web-portfolio div.web-item {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
 	margin: 8px;
-	width: 262px;
+	width: 280px;
 }
 
-section#web-portfolio a {
-	width: 262px;
+section.web-portfolio a {
+	width: 280px;
 	margin: 0;
 }
 
-section#web-portfolio div.web-cover {
+section.web-portfolio div.web-cover {
 	position: absolute;
 	top: 0;
-	width: 262px;
+	width: 280px;
 	height: 100%;
 	padding: 0;
 	margin: 0 auto;
@@ -331,14 +331,14 @@ section#web-portfolio div.web-cover {
 	background-color: black;
 }
 
-section#web-portfolio div.web-cover:hover {
+section.web-portfolio div.web-cover:hover {
 	opacity: 0.8;
     -webkit-transition: opacity 0.5s ease;
     -moz-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
 }
 
-section#web-portfolio div.web-cover-items {
+section.web-portfolio div.web-cover-items {
 	display: inline-block;
 	position: relative;
 	top: 50%;
@@ -347,7 +347,7 @@ section#web-portfolio div.web-cover-items {
 	transform: translateY(-50%);
 }
 
-section#web-portfolio div.web-cover h1 {
+section.web-portfolio div.web-cover h1 {
 	padding: 0;
 	margin: 0;
 	margin-bottom: 0.25em;
@@ -355,12 +355,12 @@ section#web-portfolio div.web-cover h1 {
 	font-weight: 700;
 }
 
-section#web-portfolio div.web-cover a {
+section.web-portfolio div.web-cover a {
 	display: inline-block;
 	width: 100%;
 }
 
-section#web-portfolio img {
+section.web-portfolio img {
 	margin: 0;
 }
 
@@ -393,7 +393,8 @@ section.contact p#email-popup {
 	top: -3em;
 	display: inline-block;
 	background-color: #1e1e20;
-	padding: 2px 8px;
+	padding: 4px 14px;
+	border-radius: 50px;
 	font-weight: 700;
 }
 

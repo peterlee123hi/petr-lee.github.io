@@ -19,6 +19,12 @@ $(document).ready(function(){
 	    }, 1500);
 	});
 
+	$('#project-link').click(function() {
+		$('html, body').animate({
+	        scrollTop: $('section#project-portfolio').offset().top
+	    }, 2000);
+	});
+
 	$('#contact-link').click(function() {
 		$('html, body').animate({
 	        scrollTop: $('section.contact').offset().top
@@ -60,7 +66,7 @@ $(document).ready(function(){
         });
 
 	var link;
-	$('section#web-portfolio div.web-cover p').hover(function() {
+	$('section.web-portfolio div.web-cover p').hover(function() {
 		$(this).css('color', 'red');
 		link = $(this).closest('a');
 		link.bind('click', function(e){
@@ -79,6 +85,10 @@ $(document).ready(function(){
 		window.open('https://github.com/UNRAC/unrac.github.io', '_blank');
 	});
 
+	$('#boilerplate-link').click(function() {
+		window.open('https://github.com/petr-lee/FrontendBoilerplate', '_blank');
+	});
+
 	$('#globaltoday-link').click(function() {
 		window.open('https://github.com/petr-lee/GlobalToday', '_blank');
 	});
@@ -89,9 +99,5 @@ $(document).ready(function(){
 
 	$('#github-link').click(function() {
 		window.open('https://github.com/petr-lee', '_blank');
-	});
-
-	$('#uil-link').click(function() {
-		window.open('./docs/uil.pdf', '_blank');
 	});
 });
