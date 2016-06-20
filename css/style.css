@@ -348,7 +348,7 @@ section.web-portfolio div.web-cover-items {
 }
 
 section.web-portfolio div.web-cover h1 {
-	padding: 0;
+	padding: 0 10px;
 	margin: 0;
 	margin-bottom: 0.25em;
 	font-size: 1.2em;
