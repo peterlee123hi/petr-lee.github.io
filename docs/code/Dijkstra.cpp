@@ -57,11 +57,11 @@ void input() {
 void dijkstra() {
     dist[s] = 0;
     priority_queue< ii, vii, greater<ii> > pq;
-    pq.push(ii(s, 0));
+    pq.push(ii(0, s));
 
     while(!pq.empty()) {
         ii state = pq.top(); pq.pop();
-        int u = state.fi, d = state.se;
+        int u = state.se, d = state.fi;
         if(d > dist[u]) continue;
 
         rep(j, 0, sz(AdjList[u])) {
