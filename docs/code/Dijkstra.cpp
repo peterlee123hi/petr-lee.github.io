@@ -69,7 +69,7 @@ void dijkstra() {
             int v = e.fi, w = e.se;
             if(dist[v] == -1 || dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
-                pq.push(ii(v, dist[v]));
+                pq.push(ii(dist[v], v));
             }
         }
     }
