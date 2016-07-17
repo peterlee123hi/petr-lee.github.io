@@ -94,7 +94,7 @@ $(document).ready(function(){
 	});
 
 	$('#resume-link').click(function() {
-		window.open('./docs/resume.pdf', '_blank');
+		window.open('./docs/peter_lee_resume.pdf', '_blank');
 	});
 
 	$('#github-link').click(function() {
