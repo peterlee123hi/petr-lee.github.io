@@ -121,7 +121,7 @@ section.cover img#alt-cover-img {
 	}
 }
 
-@media(max-width: 660px) {
+@media(max-width: 800px) {
 	section.primary-nav {
 		height: inherit;
 		padding: 40px 0 74px 0;
