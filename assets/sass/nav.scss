@@ -1,0 +1,33 @@
+nav {
+  background-color: map-get($grey, lighten-3);
+
+  a.brand-logo {
+    height: inherit;
+
+    img {
+      height: inherit;
+    }
+  }
+
+  a.button-collapse i {
+    color: map-get($grey, darken-4);
+    margin-left: 0.5em;
+  }
+
+  ul {
+    a {
+      font-family: $raleway;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: map-get($grey, darken-4);
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .nav-wrapper {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}

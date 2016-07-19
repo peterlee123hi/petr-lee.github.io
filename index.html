@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <title>Frontend Boilerplate | When time isn't on your side.</title>
+  <title>Portfolio of Petr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,800' rel='stylesheet' type='text/css'>
+  <!-- Favicon Stuff -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Raleway:100,300,400,800|Material+Icons" />
 
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/animate.css">
@@ -17,10 +23,43 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">
+          <img src="assets/img/personal_banner.png">
+        </a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Design</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Algorithms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Design</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Algorithms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div id="particles-js" class="cover parallax-window" data-parallax="scroll" data-image-src="assets/img/star-background.jpg">
+    <div class="cover-text">
+      <h2>THE PORTFOLIO OF</h2>
+      <h1>PETER LEE</h1>
+      <p>I strive to make beautiful products through design and code.</p>
+    </div>
+  </div>
+
   <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vendor/materialize.min.js"></script>
   <script src="assets/js/vendor/jquery.waypoints.min.js"></script>
   <script src="assets/js/vendor/velocity.min.js"></script>
-  <script src="assets/js/vendor/bootstrap.min.js"></script>
   <script src="assets/js/vendor/pace.min.js"></script>
   <script src="assets/js/vendor/particles.min.js"></script>
   <script src="assets/js/vendor/parallax.min.js"></script>

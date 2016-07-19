@@ -1,0 +1,40 @@
+.cover {
+  position: relative;
+  min-height: 400px;
+  max-height: 600px;
+  background: transparent;
+
+  .cover-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+    h1, 
+    h2,
+    p {
+      font-family: $roboto;
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-family: $raleway;
+      margin-top: 0;
+      margin-bottom: 0.1em;
+      font-weight: 100;
+    }
+
+    p {
+      margin-top: 0.2em;
+      margin-bottom: 0;
+      font-weight: 100;
+      font-size: 1.4em;
+    }
+  }
+}
