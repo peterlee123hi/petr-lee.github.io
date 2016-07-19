@@ -1,6 +1,6 @@
 (function($) {
   var editor = ace.edit("editor");
-  var base = 'http://petr-lee.github.io/docs/code/';
+  var base = 'https://raw.githubusercontent.com/petr-lee/petr-lee.github.io/master/assets/docs/code/';
   editor.setTheme("ace/theme/monokai");
   editor.setShowPrintMargin(false);
   editor.session.setMode("ace/mode/c_cpp");
