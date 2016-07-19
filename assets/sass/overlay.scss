@@ -1,0 +1,56 @@
+#overlay {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.9);
+  text-align: center;
+  overflow-y: scroll;
+
+  img {
+    width: 75%;
+    height: auto;
+    margin: 3em auto;
+    display: block;
+  }
+
+  h6 {
+    position: fixed;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+    top: 15px;
+    left: 30px;
+  }
+
+  h1,
+  p {
+    color: white;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-family: $raleway;
+    font-weight: 800;
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+
+  .btn {
+    margin: auto 0.5em;
+  }
+}
