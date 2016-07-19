@@ -22,6 +22,12 @@
     }, 500);
   });
 
+  $('a#contact-link').click(function() {
+    $('html, body').animate({
+      scrollTop: $('footer').offset().top
+    }, 500);
+  });
+
   // PORTFOLIO ANIMATIONS
   $('section.portfolio img').hover(function() {
       $(this).stop().animate({"top" : "-10px"}, 250, 'swing');
@@ -31,7 +37,7 @@
 
   // Ok, this is annoying.
   // Why won't the animations work?!?!
-  $('.portfolio img').click(function(){
+  $('section#design img').click(function() {
     var img = $('<img>');
     img.attr('src', $(this).attr("src"));
     $('#overlay').append(img);
