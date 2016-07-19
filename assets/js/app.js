@@ -55,23 +55,23 @@
 
     "globaltoday-link": {
       "name": "Global Today",
-      "info": "I made this website as a homework assignment for my english class about the environment.",
-      "link": "",
-      "repo": ""
+      "info": "I made this website as a homework assignment for my english class about the environment. It's also the only reason I got an A instead of an A- in the class. I used this project to master pure HTML and CSS.",
+      "link": "http://peterlee.tech/GlobalToday/",
+      "repo": "https://github.com/petr-lee/GlobalToday"
     },
 
     "unrac-link": {
-      "name": "",
-      "info": "",
-      "link": "",
-      "repo": ""
+      "name": "United Nations Refugee at Cal",
+      "info": "I was asked to make a website for this nonprofit that was dedicated to raising awareness for the refugee crisis in Syria. At the time, I was proficient at more advanced front-end frameworks including Angular. I knew Angular was unnecessary for this simple front-end project, but I decided to use it as an exercise.",
+      "link": "http://unrac.github.io/#/",
+      "repo": "https://github.com/UNRAC/unrac.github.io"
     },
 
     "boilerplate-link": {
-      "name": "",
-      "info": "",
-      "link": "",
-      "repo": ""
+      "name": "Front-end Boilerplate",
+      "info": "After learning so many different frameworks and plugins for front-end, I decided to compile my own starter code pre-installed with mostly necessary, sometimes extra fancy features for future front-end projects. I also made boilerplates for Materialize and Material Kit PRO. Also note, there have been MAJOR revisions since I made the sample landing page, so the updated boilerplate is on a separate branch.",
+      "link": "http://peterlee.tech/FrontendBoilerplate/",
+      "repo": "https://github.com/petr-lee/FrontendBoilerplate"
     }
   };
 
