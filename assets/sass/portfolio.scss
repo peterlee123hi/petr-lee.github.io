@@ -29,3 +29,33 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 }
+
+#overlay {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.9);
+  text-align: center;
+  overflow-y: scroll;
+
+  img {
+    width: 60%;
+    height: auto;
+    margin: 3em 0;
+    display: inline-block;
+  }
+
+  h6 {
+    position: fixed;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+    top: 15px;
+    left: 30px;
+  }
+}
