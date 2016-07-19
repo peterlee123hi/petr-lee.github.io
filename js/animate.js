@@ -31,10 +31,10 @@ $(document).ready(function(){
 	    }, 2000);
 	});
 
-	$('section.portfolio img').hover(function(){
-			$(this).stop().animate({"top" : "-10px"});
-		}, function(){
-	 		$(this).stop().animate({"top": "0"});
+	$('section.portfolio img').hover(function() {
+			$(this).stop().animate({"top" : "-10px"}, 250, 'swing');
+		}, function() {
+	 		$(this).stop().animate({"top": "0"}, 250, 'swing');
 	});
 
 	$('#design-portfolio img').click(function(){
@@ -43,11 +43,11 @@ $(document).ready(function(){
 		$('#overlay').append(img);
 		$('#overlay').attr("opacity", 0);
 		$('#overlay').attr("display", "block");
-		$('#overlay').fadeTo(1000, 1);
+		$('#overlay').fadeTo(500, 1);
 	});
 
 	$('#overlay h6').click(function() {
-		$('#overlay').fadeTo(1000, 0, function() {
+		$('#overlay').fadeTo(500, 0, function() {
 			$('#overlay img').remove();
 			$('#overlay').hide();
 		});
