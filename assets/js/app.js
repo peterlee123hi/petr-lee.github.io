@@ -43,11 +43,11 @@
     $('#overlay').append(img);
     $('#overlay').attr("opacity", 0);
     $('#overlay').attr("display", "block");
-    $('#overlay').fadeTo(100, 1);
+    $('#overlay').fadeIn(250);
   });
 
   $('#overlay h6').click(function() {
-    $('#overlay').fadeTo(100, 0, function() {
+    $('#overlay').fadeOut(250, function() {
       $('#overlay img').remove();
       $('#overlay').hide();
     });
