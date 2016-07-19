@@ -16,126 +16,100 @@
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Raleway:100,300,400,800|Material+Icons" />
 
-  <link rel="stylesheet" href="../assets/css/animate.css">
-  <link rel="stylesheet" href="../assets/css/hover.min.css">
   <link rel="stylesheet" href="../assets/css/pace.css">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="../" class="brand-logo center">
-        <img src="../assets/img/personal_banner.png">
-      </a>
-    </div>
-  </nav>
-
-  <div class="display-wrapper">
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">Templates</h1>
-
-      <ul class="dropdown-menu">
-        <li file="main.cpp" language="c_cpp">C++</li>
-        <li class="selected" file="main_lite.cpp" language="c_cpp">C++ Lite</li>
-        <li file="Main.java" language="java">Java</li>
-      </ul>
-    </div>
-
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">Data Structures</h1>
-
-      <ul class="dropdown-menu">
-        <li file="UnionFind.cpp" language="c_cpp">Union Find</li>
-        <li file="SegmentTree.cpp" language="c_cpp">Segment Tree</li>
-        <li file="FenwickTree.cpp" language="c_cpp">Fenwick Tree</li>
-      </ul>
-    </div>
-
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">Dynamic Programming</h1>
-
-      <ul class="dropdown-menu">
-        <li file="Max1DSum.cpp" language="c_cpp">Max 1D Range Sum</li>
-        <li file="Max2DSum.cpp" language="c_cpp">Max 2D Range Sum</li>
-        <li file="LIS.cpp" language="c_cpp">Longest Increasing Subsequence</li>
-        <li file="Knapsack.cpp" language="c_cpp">Knapsack</li>
-        <li file="CoinChange.cpp" language="c_cpp">Coin Change</li>
-        <!--li file="TravelingSalesman.cpp" language="c_cpp">Traveling Salesman</li-->
-      </ul>
-    </div>
-
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">Graph Algorithms</h1>
-
-      <ul class="dropdown-menu">
-        <li file="BFS.cpp" language="c_cpp">Breadth First Search</li>
-        <li file="DFS.cpp" language="c_cpp">Depth First Search</li>
-        <li file="FCC.cpp" language="c_cpp">Finding Connected Components</li>
-        <li file="flood_fill.cpp" language="c_cpp">Flood Fill</li>
-        <li file="topological_sort.cpp" language="c_cpp">Topological Sort</li>
-        <li file="bipartite.cpp" language="c_cpp">Bipartite Graph Check</li>
-        <li file="bipartite.cpp" language="c_cpp">Finding Articulation Points and Bridges</li>
-        <li file="Tarjan.cpp" language="c_cpp">Tarjan's SCC</li>
-        <li file="Kruskal.cpp" language="c_cpp">Kruskal's MST</li>
-        <li file="Dijkstra.cpp" language="c_cpp">Dijkstra's SP</li>
-        <li file="Bellman.cpp" language="c_cpp">Bellman's SP</li>
-        <li file="Warshall.cpp" language="c_cpp">Warshall's APSP</li>
-        <li file="Karp.cpp" language="c_cpp">Karp's Max Network Flow</li>
-        <li file="MCBM.cpp" language="c_cpp">Max Cardinality Bipartite Matching</li>
-      </ul>
-    </div>
-
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">Math</h1>
-
-      <ul class="dropdown-menu">
-        <li file="Sieve.cpp" language="c_cpp">Sieve's Prime Check</li>
-        <li file="gcd-lcm.cpp" language="c_cpp">GCD/LCM</li>
-        <li file="prime_factors.cpp" language="c_cpp">Prime Factors</li>
-        <li file="divisors.cpp" language="c_cpp">Divisors</li>
-        <li file="cycle_finding.cpp" language="c_cpp">Floyd's Cycle Finding</li>
-      </ul>
-    </div>
-
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">String Processing</h1>
-
-      <ul class="dropdown-menu">
-        <li file="kmp.java" language="java">KMP</li>
-        <li file="string_alignment.java" language="java">String Alignment</li>
-        <li file="lcsq.java" language="java">Longest Common Subsequence</li>
-        <li file="lrs.java" language="java">Longest Repeated Substring</li>
-        <li file="lcs.java" language="java">Longest Common Substring</li>
-      </ul>
-    </div>
-
-    <div class="topic-display dropdown">
-      <h1 class="dropdown-toggle" data-toggle="dropdown">Computational Geometry</h1>
-
-      <ul class="dropdown-menu">
-        <li file="points-lines.cpp" language="c_cpp">Points/Lines</li>
-        <li file="circles.cpp" language="c_cpp">Circles</li>
-        <li file="triangles.cpp" language="c_cpp">Triangles</li>
-        <li file="polygons.cpp" language="c_cpp">Polygons</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 codeSide">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="compile-code">
-              <pre name="code" id="editor" style="border: none;"></pre>
-            </div>
-          </div>
-        </div>
+  <section class="algorithms">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="../" class="brand-logo center">
+          <img src="../assets/img/personal_banner.png">
+        </a>
       </div>
+    </nav>
+
+    <div class="button-container container">
+      <a class='dropdown-button btn blue' data-activates='templates'>Templates</a>
+
+      <ul id='templates' class='dropdown-content'>
+        <li file="main.cpp" language="c_cpp"><a>C++</a></li>
+        <li class="selected" file="main_lite.cpp" language="c_cpp"><a>C++ Lite</a></li>
+        <li file="Main.java" language="java"><a>Java</a></li>
+      </ul>
+
+      <a class='dropdown-button btn blue' data-activates='data-structures'>Data Structures</a>
+
+      <ul id='data-structures' class='dropdown-content'>
+        <li file="UnionFind.cpp" language="c_cpp"><a>Union Find</a></li>
+        <li file="SegmentTree.cpp" language="c_cpp"><a>Segment Tree</a></li>
+        <li file="FenwickTree.cpp" language="c_cpp"><a>Fenwick Tree</a></li>
+      </ul>
+
+      <a class='dropdown-button btn blue' data-activates='dynamic-programming'>Dynamic Programming</a>
+
+      <ul id='dynamic-programming' class='dropdown-content'>
+        <li file="Max1DSum.cpp" language="c_cpp"><a>Max 1D Range Sum</a></li>
+        <li file="Max2DSum.cpp" language="c_cpp"><a>Max 2D Range Sum</a></li>
+        <li file="LIS.cpp" language="c_cpp"><a>Longest Increasing Subsequence</a></li>
+        <li file="Knapsack.cpp" language="c_cpp"><a>Knapsack</a></li>
+        <li file="CoinChange.cpp" language="c_cpp"><a>Coin Change</a></li>
+      </ul>
+
+      <a class='dropdown-button btn blue' data-activates='graph-algorithms'>Graph Algorithms</a>
+
+      <ul id='graph-algorithms' class='dropdown-content'>
+        <li file="BFS.cpp" language="c_cpp"><a>Breadth First Search</a></li>
+        <li file="DFS.cpp" language="c_cpp"><a>Depth First Search</a></li>
+        <li file="FCC.cpp" language="c_cpp"><a>Finding Connected Components</a></li>
+        <li file="flood_fill.cpp" language="c_cpp"><a>Flood Fill</a></li>
+        <li file="topological_sort.cpp" language="c_cpp"><a>Topological Sort</a></li>
+        <li file="bipartite.cpp" language="c_cpp"><a>Bipartite Graph Check</a></li>
+        <li file="bipartite.cpp" language="c_cpp"><a>Finding Articulation Points and Bridges</a></li>
+        <li file="Tarjan.cpp" language="c_cpp"><a>Tarjan's SCC</a></li>
+        <li file="Kruskal.cpp" language="c_cpp"><a>Kruskal's MST</a></li>
+        <li file="Dijkstra.cpp" language="c_cpp"><a>Dijkstra's SP</a></li>
+        <li file="Bellman.cpp" language="c_cpp"><a>Bellman's SP</a></li>
+        <li file="Warshall.cpp" language="c_cpp"><a>Warshall's APSP</a></li>
+        <li file="Karp.cpp" language="c_cpp"><a>Karp's Max Network Flow</a></li>
+        <li file="MCBM.cpp" language="c_cpp"><a>Max Cardinality Bipartite Matching</a></li>
+      </ul>
+
+      <a class='dropdown-button btn blue' data-activates='math'>Math</a>
+
+      <ul id='math' class='dropdown-content'>
+        <li file="Sieve.cpp" language="c_cpp"><a>Sieve's Prime Check</a></li>
+        <li file="gcd-lcm.cpp" language="c_cpp"><a>GCD/LCM</a></li>
+        <li file="prime_factors.cpp" language="c_cpp"><a>Prime Factors</a></li>
+        <li file="divisors.cpp" language="c_cpp"><a>Divisors</a></li>
+        <li file="cycle_finding.cpp" language="c_cpp"><a>Floyd's Cycle Finding</a></li>
+      </ul>
+
+      <a class='dropdown-button btn blue' data-activates='string-processing'>String Processing</a>
+
+      <ul id='string-processing' class='dropdown-content'>
+        <li file="kmp.java" language="java"><a>KMP</a></li>
+        <li file="string_alignment.java" language="java"><a>String Alignment</a></li>
+        <li file="lcsq.java" language="java"><a>Longest Common Subsequence</a></li>
+        <li file="lrs.java" language="java"><a>Longest Repeated Substring</a></li>
+        <li file="lcs.java" language="java"><a>Longest Common Substring</a></li>
+      </ul>
+
+      <a class='dropdown-button btn blue' data-activates='computational-geometry'>Computational Geometry</a>
+
+      <ul id='computational-geometry' class='dropdown-content'>
+        <li file="points-lines.cpp" language="c_cpp"><a>Points/Lines</a></li>
+        <li file="circles.cpp" language="c_cpp"><a>Circles</a></li>
+        <li file="triangles.cpp" language="c_cpp"><a>Triangles</a></li>
+        <li file="polygons.cpp" language="c_cpp"><a>Polygons</a></li>
+      </ul>
     </div>
   </div>
 
-  <script src="../assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <div id="editor"></div>
+  </section>
+
+  <script src="../assets/js/vendor/jquery-2.1.4.min.js"></script>
   <script src="../assets/js/vendor/materialize.min.js"></script>
   <script src="../assets/js/vendor/pace.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>

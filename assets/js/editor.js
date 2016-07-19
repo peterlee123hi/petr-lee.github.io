@@ -4,6 +4,9 @@
   editor.setTheme("ace/theme/monokai");
   editor.setShowPrintMargin(false);
   editor.session.setMode("ace/mode/c_cpp");
+  editor.setOptions({
+    fontSize: "14pt"
+  });
 
   $.get(base + 'main_lite.cpp', function(data) {
     editor.setValue(data);
@@ -18,6 +21,7 @@
         editor.session.setValue(data);
         editor.clearSelection();
       });
+      editor.session.setMode("ace/mode/" + $(this).attr('language'));
     }
   });
 }(jQuery));
