@@ -1,5 +1,5 @@
 .cards {
-  padding-top: 6em;
+  padding-top: 10em;
 
   .card {
     border-radius: 5px;
@@ -27,6 +27,7 @@
         }
 
         p {
+          font-weight: 300;
           width: 85%;
           margin: auto;
           text-align: left;
@@ -101,7 +102,7 @@
 
 @media screen and (max-width: 620px) {
   .cards {
-    padding-top: 0;
+    padding-top: 4em;
 
     .card {
       margin-top: 4em;

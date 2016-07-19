@@ -1,0 +1,31 @@
+.portfolio {
+  max-width: 960px;
+  margin: auto;
+  padding-top: 6em;
+  text-align: center;
+
+  h1 {
+    font-family: $raleway;
+    font-weight: 100;
+    font-size: 3.2em;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0.2em;
+    margin-bottom: 2em;
+    font-family: $roboto;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  img {
+    position: relative;
+    width: 278px;
+    margin: 8px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+}
