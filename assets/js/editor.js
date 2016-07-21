@@ -5,7 +5,7 @@
   editor.setShowPrintMargin(false);
   editor.session.setMode("ace/mode/c_cpp");
   editor.setOptions({
-    fontSize: "14pt"
+    fontSize: "10pt"
   });
 
   $.get(base + 'main_lite.cpp', function(data) {
