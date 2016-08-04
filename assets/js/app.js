@@ -61,7 +61,7 @@
     },
 
     "unrac-link": {
-      "name": "United Nations Refugee at Cal",
+      "name": "United Nations Refugee Agency at Cal",
       "info": "I was asked to make a website for this nonprofit that was dedicated to raising awareness for the refugee crisis in Syria. At the time, I was proficient at more advanced front-end frameworks including Angular. I knew Angular was unnecessary for this simple front-end project, but I decided to use it as an exercise.",
       "link": "http://unrac.github.io/#/",
       "repo": "https://github.com/UNRAC/unrac.github.io"
