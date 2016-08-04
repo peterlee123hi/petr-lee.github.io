@@ -76,7 +76,7 @@
 
     "hackin-link": {
       "name": "Hack In",
-      "info": "At the European Innovation Academy, a 4-week extreme startup accelerator, I founded this tech startup along with a small team of software developers and business specialists. Hack In is a platform that facilitates the recruitment process of software develoepers through customizable and comprehensive software development assessments. To demo, a sample login is \"sample@company.io\" and the password is \"12345678\".",
+      "info": "At the European Innovation Academy, a 4-week extreme startup accelerator, I founded this tech startup along with a small team of software developers and business specialists. Hack In is a platform that facilitates the recruitment process of software develoepers through customizable and comprehensive software development assessments. Our platform uses Meteor as the web framework. To demo, a sample login is \"sample@company.io\" and the password is \"12345678\".",
       "link": "http://www.hackin.io/",
       "repo": "https://github.com/petr-lee/HackIn"
     }
