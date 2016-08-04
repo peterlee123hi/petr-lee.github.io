@@ -72,6 +72,13 @@
       "info": "After learning so many different frameworks and plugins for front-end, I decided to compile my own starter code pre-installed with mostly necessary, sometimes extra fancy features for future front-end projects. I also made boilerplates for Materialize and Material Kit PRO. Also note, there have been MAJOR revisions since I made the sample landing page, so the updated boilerplate is on a separate branch.",
       "link": "http://peterlee.tech/FrontendBoilerplate/",
       "repo": "https://github.com/petr-lee/FrontendBoilerplate"
+    },
+
+    "hackin-link": {
+      "name": "Hack In",
+      "info": "At the European Innovation Academy, a 4-week extreme startup accelerator, I founded this tech startup along with a small team of software developers and business specialists. Hack In is a platform that facilitates the recruitment process of software develoepers through customizable and comprehensive software development assessments. To demo, a sample login is \"sample@company.io\" and the password is \"12345678\".",
+      "link": "http://www.hackin.io/",
+      "repo": "https://github.com/petr-lee/HackIn"
     }
   };
 
