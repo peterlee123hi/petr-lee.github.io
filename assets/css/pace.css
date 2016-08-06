@@ -5,73 +5,49 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  -webkit-transition: -webkit-opacity 0.5s;
-  transition: opacity 0.5s;
-  opacity: 0;
+
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 200px;
+  background: #fff;
+  border: 1px solid #29d;
+
+  overflow: hidden;
 }
 
-.pace .pace-activity {
-  display: block;
+.pace .pace-progress {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  max-width: 200px;
   position: fixed;
   z-index: 2000;
+  display: block;
+  position: absolute;
   top: 0;
-  right: 0;
-  width: 100%;
+  right: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
-  -webkit-transition: -webkit-opacity 0.5s;
-  transition: opacity 0.5s;
-  pointer-events: none;
+  width: 100%;
+  background: #29d;
 }
 
-.pace.pace-active  {
-  opacity: 1;
-  -webkit-transition: -webkit-opacity 0.5s;
-  transition: opacity 0.5s;
-}
-
-.pace .pace-activity::before,
-.pace .pace-activity::after {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    border: 5px solid #fff;
-    border-radius: 50%;
-    content: '';
-}
-
-.pace .pace-activity::before {
-    margin-top: -40px;
-    margin-left: -40px;
-    width: 80px;
-    height: 80px;
-    border-right-color: rgba(0, 0, 0, .2);
-    border-left-color: rgba(0, 0, 0, .2);
-    -webkit-animation: pace-theme-corner-indicator-spin 3s linear infinite;
-    animation: pace-theme-corner-indicator-spin 3s linear infinite;
-}
-
-.pace .pace-activity::after {
-    margin-top: -20px;
-    margin-left: -20px;
-    width: 40px;
-    height: 40px;
-    border-top-color: rgba(0, 0, 0, .2);
-    border-bottom-color: rgba(0, 0, 0, .2);
-    -webkit-animation: pace-theme-corner-indicator-spin 1s linear infinite;
-    animation: pace-theme-corner-indicator-spin 1s linear infinite;
-}
-
-@-webkit-keyframes pace-theme-corner-indicator-spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(359deg); }
-}
-@keyframes pace-theme-corner-indicator-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(359deg); }
+.pace.pace-inactive {
+  display: none;
 }
 
 body >:not(.pace),
