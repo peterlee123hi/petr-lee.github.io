@@ -1,5 +1,21 @@
 .cards {
-  padding-top: 10em;
+  padding-top: 2em;
+  text-align: center;
+
+  h1 {
+    font-family: $raleway;
+    font-weight: 100;
+    font-size: 3.2em;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0.2em;
+    margin-bottom: 6em;
+    font-family: $raleway;
+    font-weight: 300;
+    font-size: 1.2em;
+  }
 
   .card {
     border-radius: 5px;
@@ -52,10 +68,14 @@
 
 @media #{$medium-and-down} {
   .cards {
-    padding-top: 0;
+    padding-top: 2em;
+
+    p {
+      margin-bottom: 4em;
+    }
 
     .card {
-      margin-top: 6em;
+      margin-top: 2em;
 
       .card-content {
         .card-icon {
@@ -78,10 +98,14 @@
 
 @media screen and (max-width: 720px) {
   .cards {
-    padding-top: 0;
+    padding-top: 2em;
+
+    p {
+      margin-bottom: 2em;
+    }
 
     .card {
-      margin-top: 6em;
+      margin-top: 4em;
 
       .card-content {
         .card-icon {
@@ -103,7 +127,7 @@
 
 @media screen and (max-width: 620px) {
   .cards {
-    padding-top: 4em;
+    padding-top: 2em;
 
     .card {
       margin-top: 4em;
