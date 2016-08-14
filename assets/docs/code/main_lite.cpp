@@ -14,8 +14,9 @@
 #include <algorithm>
 #include <functional>
 using namespace std; 
+#define DEBUG(x) cout << '>' << #x << ':' << x << endl;
 #define REP(i,n) for(int i=0;i<(n);i++)
-#define FOR(i,a,b) for(int i=(a);i<=(b);i++)
+#define FOR(i,a,b) for(int i=(a);i<(b);i++)
 #define FORD(i,a,b) for(int i=(b)-1;i>=(a);i--)
 #define mp make_pair
 #define pb push_back
