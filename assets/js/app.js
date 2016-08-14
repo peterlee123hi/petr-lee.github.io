@@ -62,7 +62,7 @@
 
     "unrac-link": {
       "name": "United Nations Refugee Agency at Cal",
-      "info": "I was asked to make a website for this nonprofit that was dedicated to raising awareness for the refugee crisis in Syria. At the time, I was proficient at more advanced front-end frameworks including Angular, which is the major framework for the website.",
+      "info": "I was requested to make a website for this nonprofit that was dedicated to raising awareness for the refugee crisis in Syria. At the time, I was proficient at more advanced front-end frameworks including Angular, which is the major framework for the website.",
       "link": "http://unrac.berkeley.edu",
       "repo": "https://github.com/UNRAC/unrac.github.io"
     },
@@ -86,6 +86,13 @@
       "info": "My journey to becoming a competitive programmer began in the winter break of 2015. After hours of research, practice, and reflection, I realized that becoming a master of competitive programming is more than problem solving skills, but complete mastery of famous algorithms in computer science. This lead to the creation of my algorithm notebook, which contains the algorithms that I run into on my journey to mastery.",
       "link": "http://peterlee.tech/algorithms",
       "repo": "https://github.com/petr-lee/petr-lee.github.io/tree/master/assets/docs/code"
+    },
+
+    "alarylanguage-link": {
+      "name": "Alary Language",
+      "info": "I was requested to make this website for an official club at UC Berkeley. Alary Language focuses on connecting students who are passionate about learning and teaching languages. The club provides a more personal language learning experience with companionship.",
+      "link": "http://peterlee.tech/AlaryLanguage",
+      "repo": "https://github.com/petr-lee/AlaryLanguage"
     }
   };
 
