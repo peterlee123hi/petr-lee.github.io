@@ -93,6 +93,19 @@
       "info": "I was requested to make this website for an official club at UC Berkeley. Alary Language focuses on connecting students who are passionate about learning and teaching languages. The club provides a more personal language learning experience with companionship. This website was made in a single day.",
       "link": "http://peterlee.tech/AlaryLanguage",
       "repo": "https://github.com/petr-lee/AlaryLanguage"
+    },
+
+    "yelpmaps-link": {
+      "name": "Yelp Maps",
+      "info": "I made a program in Python that retrieves data from the Yelp academic dataset and displays a visualization of restaurant ratings using machine learning. Regions are highlighted based on restaurant quality and density. The program generates a Voronoi diagram using k-means clustering algorithm.",
+      "repo": "https://github.com/petr-lee/YelpMaps"
+    },
+
+    "bearmaps-link": {
+      "name": "Bear Maps",
+      "info": "Created a clone of Google Maps using the JavaFX library and advanced data structures including a QuadTree and Trie. Bear Maps has a database of images of the Berkeley region and displays corresponding images based on zoom level and location.",
+      "link": "http://bearmaps2016.herokuapp.com/",
+      "repo": "https://github.com/petr-lee/BearMaps"
     }
   };
 
@@ -114,7 +127,9 @@
 
     $('#overlay').append(h1);
     $('#overlay').append(p);
-    $('#overlay').append(link);
+    if (codeDescriptions[$(this).attr('id')]["link"]) {
+      $('#overlay').append(link);
+    }
     $('#overlay').append(repo);
     $('#overlay').append(img);
     $('#overlay').attr("opacity", 0);
