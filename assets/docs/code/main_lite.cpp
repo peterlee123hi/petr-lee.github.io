@@ -43,9 +43,13 @@ void output() {
 
 }
 
+/* BEGIN SOLUTION */
+
 void solve() {
 
 }
+
+/* END SOLUTION */
 
 int main() {
     return 0;
