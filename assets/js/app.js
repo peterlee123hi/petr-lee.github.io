@@ -91,7 +91,7 @@
     "alarylanguage-link": {
       "name": "Alary Language",
       "info": "I was requested to make this website for an official club at UC Berkeley. Alary Language focuses on connecting students who are passionate about learning and teaching languages. The club provides a more personal language learning experience with companionship. This website was made in a single day.",
-      "link": "http://peterlee.tech/AlaryLanguage",
+      "link": "http://alarylanguage.club",
       "repo": "https://github.com/petr-lee/AlaryLanguage"
     },
 
