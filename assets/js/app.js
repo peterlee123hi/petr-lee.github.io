@@ -36,7 +36,7 @@
   });
 
   // DESIGN PORTFOLIO
-  $('section#design img').click(function() {
+  $('section#design img:not(.ignore)').click(function() {
     var img = $('<img>');
     img.attr('src', $(this).attr("src"));
     $('#overlay').append(img);
