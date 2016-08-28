@@ -106,6 +106,13 @@
       "info": "Created a clone of Google Maps using the JavaFX library and advanced data structures including a QuadTree and Trie. Bear Maps has a database of images of the Berkeley region and displays corresponding images based on zoom level and location.",
       "link": "http://bearmaps2016.herokuapp.com/",
       "repo": "https://github.com/petr-lee/BearMaps"
+    },
+
+    "csm-link": {
+      "name": "Computer Science Mentors",
+      "info": "After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. It is still a work in progress, but hopefully will become the official website in a few weeks at \"csmentors.berkeley.edu\".",
+      "link": "http://peterlee.tech/CSMentors",
+      "repo": "https://github/com/petr-lee/CSMentors"
     }
   };
 
