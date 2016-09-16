@@ -53,6 +53,13 @@
       "repo": "https://github.com/fzcf/fzcf.github.io"
     },
 
+    "durd-link": {
+      "name": "Durd Chat",
+      "info": "As an avid web developer, I was eager to exercise my new knowledge of the MEAN (without the 'A' at the time) stack. This chatting app matches users based on statistics given by their partner.",
+      "link": "http://durd.herokuapp.com",
+      "repo": "https://github.com/petr-lee/DurdChat"
+    },
+
     "globaltoday-link": {
       "name": "Global Today",
       "info": "I made this website as a homework assignment for my english class about the environment. It's also the only reason I got an A instead of an A- in the class. I used this project to master pure HTML and CSS.",
