@@ -119,7 +119,7 @@
       "name": "Computer Science Mentors",
       "info": "After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. It is still a work in progress, but hopefully will become the official website in a few weeks at \"csmentors.berkeley.edu\".",
       "link": "http://peterlee.tech/CSMentors",
-      "repo": "https://github/com/petr-lee/CSMentors"
+      "repo": "https://github.com/petr-lee/CSMentors"
     }
   };
 
