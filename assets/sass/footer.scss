@@ -10,14 +10,11 @@ footer.page-footer {
   }
 
   p {
-    font-family: $raleway;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0.2em;
   }
 
   .footer-copyright {
-    font-family: $raleway;
-    font-weight: 400;
     margin-top: 4em;
     background-color: map-get($grey, darken-4);
   }

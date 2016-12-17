@@ -10,13 +10,6 @@
     transform: translateY(calc(-50% - 40px));
     text-align: center;
 
-    h1, 
-    h2,
-    p {
-      font-family: $roboto;
-      color: white;
-    }
-
     h1 {
       font-family: $montserrat;
       margin: 0;
@@ -31,9 +24,10 @@
     }
 
     p {
+      font-family: $open-sans;
       margin-top: 0.2em;
       margin-bottom: 0;
-      font-weight: 100;
+      font-weight: 300;
       font-size: 1.4em;
     }
   }

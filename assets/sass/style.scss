@@ -2,9 +2,13 @@
 @import 'bourbon';
 
 $raleway: "Raleway", sans-serif;
-$roboto: "Roboto", sans-serif;
+$open-sans: "Open Sans", sans-serif;
 $montserrat: "Montserrat", sans-serif;
 $purple-rain: #694489;
+
+html, body {
+	font-family: $open-sans;
+}
 
 @import 'nav';
 @import 'cover';

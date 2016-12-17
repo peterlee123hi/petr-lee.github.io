@@ -46,25 +46,11 @@
   });
 
   var codeDescriptions = {
-    "fzcf-link": {
-      "name": "Feng Zheng Cultural Foundation",
-      "info": "This was where it all began. A nonprofit organized by a friend asked me to make their website. I was new to the front-end web development community, and only used Bootstrap to make this website. Looking back at this site, I realized I've come a long way since then.",
-      "link": "http://fzculturalfoundation.org/",
-      "repo": "https://github.com/fzcf/fzcf.github.io"
-    },
-
     "durd-link": {
       "name": "Durd Chat",
       "info": "As an avid web developer, I was eager to exercise my new knowledge of the MEAN (without the 'A' at the time) stack. This chatting app matches users based on statistics given by their partner.",
       "link": "http://durd.herokuapp.com",
       "repo": "https://github.com/petr-lee/DurdChat"
-    },
-
-    "globaltoday-link": {
-      "name": "Global Today",
-      "info": "I made this website as a homework assignment for my english class about the environment. It's also the only reason I got an A instead of an A- in the class. I used this project to master pure HTML and CSS.",
-      "link": "http://peterlee.tech/GlobalToday/",
-      "repo": "https://github.com/petr-lee/GlobalToday"
     },
 
     "unrac-link": {
@@ -102,24 +88,18 @@
       "repo": "https://github.com/petr-lee/AlaryLanguage"
     },
 
-    "yelpmaps-link": {
-      "name": "Yelp Maps",
-      "info": "I made a program in Python that retrieves data from the Yelp academic dataset and displays a visualization of restaurant ratings using machine learning. Regions are highlighted based on restaurant quality and density. The program generates a Voronoi diagram using k-means clustering algorithm.",
-      "repo": "https://github.com/petr-lee/YelpMaps"
-    },
-
-    "bearmaps-link": {
-      "name": "Bear Maps",
-      "info": "Created a clone of Google Maps using the JavaFX library and advanced data structures including a QuadTree and Trie. Bear Maps has a database of images of the Berkeley region and displays corresponding images based on zoom level and location.",
-      "link": "http://bearmaps2016.herokuapp.com/",
-      "repo": "https://github.com/petr-lee/BearMaps"
-    },
-
     "csm-link": {
       "name": "Computer Science Mentors",
       "info": "After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. It is still a work in progress, but hopefully will become the official website in a few weeks at \"csmentors.berkeley.edu\".",
       "link": "http://csmentors.berkeley.edu/",
       "repo": "https://github.com/petr-lee/CSMentors"
+    },
+
+    "launchpad-link": {
+      "name": "Launchpad",
+      "info": "After attending a tech talk by the founders of Box, I was inspired to gather the most passionate and intelligent students at UC Berkeley to solve real-world problems with artificial intelligence, machine learning, and data science.",
+      "link": "http://www.callaunchpad.org/",
+      "repo": "https://github.com/callaunchpad/website"
     }
   };
 
@@ -148,6 +128,15 @@
     $('#overlay').attr("opacity", 0);
     $('#overlay').attr("display", "block");
     $('#overlay').fadeIn(0);
+  });
+
+  $('#overlay').click(function() {
+    $('#overlay').fadeOut(0, function() {
+      var x = $('#overlay h6').detach();
+      $('#overlay').empty();
+      $('#overlay').append(x);
+      $('#overlay').hide();
+    });
   });
 
   $('#overlay h6').click(function() {
