@@ -1,7 +1,13 @@
 .cover {
   position: relative;
-  min-height: 400px;
+  height: 100vh;
   background: transparent;
+
+  canvas.particles-js-canvas-el {
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
 
   .cover-text {
     position: absolute;
