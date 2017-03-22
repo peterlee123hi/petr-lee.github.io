@@ -1,0 +1,10 @@
+{
+  "name": "petr-lee-github-io",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.1",
+    "jquery": "^3.2.1",
+    "materialize": "^0.98.0",
+    "anime": "*"
+  }
+}

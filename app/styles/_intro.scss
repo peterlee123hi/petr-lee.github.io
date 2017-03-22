@@ -1,0 +1,15 @@
+#intro {
+	.intro-header {
+		position: relative;
+		padding-top: 5vmin;
+		padding-left: 8vmin;
+
+		.intro-links {
+			margin-top: 2vmin;
+			.btn {
+				margin-right: 2vmin;
+				margin-bottom: 4vmin;
+			}
+		}
+	}
+}
