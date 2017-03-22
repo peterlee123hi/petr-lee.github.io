@@ -1,0 +1,59 @@
+.page {
+	max-width: 100%;
+	width: 100vw;
+	padding: 4vmin;
+	padding-top: 96px;
+}
+
+@media only screen and (max-width: 496px) {
+	.page {
+		padding-top: 142px;
+	}
+}
+
+section {
+	.section-intro {
+		position: relative;
+		top: 0;
+		left: 0;
+
+		h1 {
+			font-size: 12vmin;
+		}
+
+		p {
+			padding-left: 6px;
+			margin: 0;
+			font-size: 4vmin;
+			font-weight: 300;
+		}
+
+		@media #{$small-and-down} {
+			h1 {
+				font-size: 20vw;
+			}
+
+			p {
+				font-size: 8vw;
+			}
+		}
+	}
+}
+
+.comingsoon {
+	padding-top: 4em;
+	position: relative;
+	max-width: 100%;
+	width: 100vw;
+	text-align: center;
+
+	img {
+		width: 400px;
+	}
+
+	@media #{$small-and-down} {
+		img {
+			width: 200px;
+		}
+	}
+}
