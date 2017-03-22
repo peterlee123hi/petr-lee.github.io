@@ -70,7 +70,7 @@ $(function() {
 						return {
 							type: dynamics.bezier,
 							duration: 500,
-							points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
+							points: [{'x':0,'y':0,'cp':[{'x':0.2,'y':1}]},{'x':1,'y':1,'cp':[{'x':0.3,'y':1}]}],
 							//delay: (itemstotal-pos-1)*40
 						};
 					}
