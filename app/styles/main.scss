@@ -3,6 +3,7 @@
 
 @import 'bower_components/materialize/sass/materialize';
 @import '_colors';
+@import '_gradients';
 @import '_page';
 @import '_intro';
 
@@ -66,11 +67,16 @@ h3 {
 }
 
 .btn:hover {
-  background-color: $dark-grey;
-  color: white;
+  background-color: white;
+  color: $dark-grey;
 }
 
 .btn:focus {
+  background-color: white;
+  color: $dark-grey;
+}
+
+.btn.plain-btn:hover {
   background-color: $dark-grey;
   color: white;
 }
