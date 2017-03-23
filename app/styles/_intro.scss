@@ -45,4 +45,10 @@
 			}
 		}
 	}
+
+	@media #{$small-and-down} {
+		.intro-about {
+			padding-top: 1em;
+		}
+	}
 }
