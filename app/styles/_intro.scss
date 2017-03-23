@@ -1,12 +1,25 @@
 #intro {
+	background-color: #eee;
 	width: 100%;
-	background-color: $light-grey;
+  background: linear-gradient(135deg, #000, #3e549c, #529dd6);
+	color: white;
+
+	.links {
+		position: fixed;
+		z-index: 11;
+	}
 
 	.intro-header {
-		position: relative;
+		position: fixed;
 		padding-top: 5vmin;
 		padding-left: 8vmin;
-		padding-bottom: 240px;
+		padding-right: 8vmin;
+		padding-bottom: 100vh;
+		z-index: 10;
+
+		h2 {
+			color: color('blue-grey', 'lighten-2');
+		}
 
 		.links {
 			margin-top: 2vmin;
@@ -25,24 +38,46 @@
 		}
 	}
 
+	.intro-block {
+		position: relative;
+		width: 100%;
+		height: 80vmin;
+		z-index: 0;
+	}
+
+	@media #{$small-and-down} {
+		.intro-block {
+			height: 120vmin;
+		}
+	}
+
 	.intro-about {
 		position: relative;
 		background: white;
 		width: 100%;
-		padding-top: 2em;
+		padding-bottom: 4em;
 		line-height: 32px;
+		z-index: 20;
+		color: black;
 
-		.clouds {
+		#header-curve {
 			position: absolute;
+			top: -110px;
 			width: 100%;
-			overflow-x: hidden;
-			top: -320px;
+			min-width: 800px;
+			height: 110px;
+		}
 
-			img {
-				width: 100%;
-				min-width: 1200px;
-				height: 360px;
-			}
+		#header-curve-shadow {
+			position: absolute;
+			top: -110px;
+			width: 100%;
+			min-width: 800px;
+			height: 110px;
+	    display: block;
+	    filter: blur(10px);
+	    mix-blend-mode: overlay;
+	    opacity: .8;
 		}
 	}
 

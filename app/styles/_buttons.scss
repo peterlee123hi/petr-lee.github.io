@@ -43,6 +43,16 @@
   color: white;
 }
 
+.btn.plain-btn-alt {
+  background-color: $dark-grey;
+  color: white;
+}
+
+.btn.plain-btn-alt:hover {
+  background-color: white;
+  color: $dark-grey;
+}
+
 @media #{$small-and-down} {
   .btn {
     width: 50px;

@@ -1,8 +1,11 @@
 $(function() {
 	var currentLocation = 'intro';
 
-	var transition = function (pageID) {
-		$('.background').addClass('background-active');
+	var transition = function (event, pageID) {
+		$('.background').css(
+			'clip-path', 
+			'circle(150vmax at 0px 0px)'
+		);
 
 		setTimeout(function() {
 			if (pageID === 'intro') {
@@ -14,38 +17,37 @@ $(function() {
 
 				$('section').addClass('hide');
 				$('section#' + pageID).removeClass('hide');
-
-				if (pageID === 'design') {
-					loadIsoGrids();
-				}
 			}
 			currentLocation = pageID;
 
-			$('.background').removeClass('background-active');
+			$('.background').css(
+				'clip-path', 
+				'circle(0vmax at 0px 0px)'
+			);
 		}, 1500);
 	};
 
-	$('.intro-btn').click(function() {
-		transition('intro');
+	$('.intro-btn').click(function(e) {
+		transition(e, 'intro');
 	});
 
-	$('.code-btn').click(function() {
-		transition('code');
+	$('.code-btn').click(function(e) {
+		transition(e, 'code');
 	});
 
-	$('.web-btn').click(function() {
-		transition('web');
+	$('.web-btn').click(function(e) {
+		transition(e, 'web');
 	});
 
-	$('.design-btn').click(function() {
-		transition('design');
+	$('.design-btn').click(function(e) {
+		transition(e, 'design');
 	});
 
-	$('.theory-btn').click(function() {
-		transition('theory');
+	$('.theory-btn').click(function(e) {
+		transition(e, 'theory');
 	});
 
-	$('.music-btn').click(function() {
-		transition('music');
+	$('.music-btn').click(function(e) {
+		transition(e, 'music');
 	});
 });

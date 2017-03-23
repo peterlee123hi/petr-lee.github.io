@@ -22,6 +22,7 @@
     <!-- Reliable Imports -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -49,18 +50,26 @@
       <div class="intro-header">
         <h1>Hi!</h1>
         <h2>I'm Peter.</h2>
-        <h2>I love mornings and sunshine.</h2>
+        <h2>I love to design and code.</h2>
         <div class="links">
-          <a class="code-btn waves-effect waves-light btn z-depth-4 gradient-1 pulse"><i class="fa fa-code"></i></a>
-          <a class="web-btn waves-effect waves-light btn z-depth-4 gradient-2"><i class="fa fa-desktop"></i></a>
-          <a class="design-btn waves-effect waves-light btn z-depth-4 gradient-3"><i class="fa fa-paint-brush"></i></a>
-          <a class="theory-btn waves-effect waves-light btn z-depth-4 gradient-4"><i class="fa fa-wrench"></i></a>
-          <a class="music-btn waves-effect waves-light btn z-depth-4 gradient-5"><i class="fa fa-music"></i></a>
+          <a class="code-btn waves-effect waves-light btn z-depth-4 plain-btn-alt pulse"><i class="fa fa-code"></i></a>
+          <a class="web-btn waves-effect waves-light btn z-depth-4 plain-btn-alt pulse"><i class="fa fa-desktop"></i></a>
+          <a class="design-btn waves-effect waves-light btn z-depth-4 plain-btn-alt pulse"><i class="fa fa-paint-brush"></i></a>
+          <a class="theory-btn waves-effect waves-light btn z-depth-4 plain-btn-alt pulse"><i class="fa fa-wrench"></i></a>
+          <a class="music-btn waves-effect waves-light btn z-depth-4 plain-btn-alt pulse"><i class="fa fa-music"></i></a>
         </div>
       </div>
+      <div class="intro-block"></div>
 
       <div class="intro-about">
-        <div class="clouds"><img src="images/clouds.png"></div>
+        <svg viewBox="0 0 1280 110" preserveAspectRatio="none" id="header-curve-shadow">
+          <path d="M1280 3.9V110H0C194 71.33 662-19.9 1280 3.9z" />
+        </svg>
+
+        <svg viewBox="0 0 1280 110" preserveAspectRatio="none" id="header-curve">
+          <path d="M1280 3.9V110H0C194 71.33 662-19.9 1280 3.9z" fill="#fff" />
+        </svg>
+        
         <div class="container">
           <div class="row">
             <div class="col m7 s12">
