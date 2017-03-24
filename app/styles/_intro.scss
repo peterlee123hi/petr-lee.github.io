@@ -13,6 +13,7 @@
 
 	.intro-header {
 		position: fixed;
+		width: 100%;
 		padding-top: 5vmin;
 		padding-left: 8vmin;
 		padding-right: 8vmin;
@@ -29,6 +30,8 @@
 			margin-top: 2vmin;
 
 			.btn {
+				margin-left: 0px;
+				margin-right: 20px;
 				margin-bottom: 4vmin;
 			}
 		}
@@ -40,6 +43,27 @@
 				margin-right: 20px;
 			}
 		}
+
+		.intro-slideshow {
+			position: relative;
+			margin-top: 20px;
+
+			.intro-slide {
+				position: absolute;
+				display: inline-block;
+				width: 100vmin;
+				height: 400px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				top: -20px;
+				opacity: 0.2;
+
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: auto 200px;
+			}
+		}
 	}
 
 	.intro-block {
@@ -49,9 +73,15 @@
 		z-index: 0;
 	}
 
+	@media #{$medium-and-down} {
+		.intro-block {
+			height: 90vmin;
+		}
+	}
+
 	@media #{$small-and-down} {
 		.intro-block {
-			height: 120vmin;
+			height: 110vmin;
 		}
 	}
 
@@ -68,7 +98,7 @@
 			width: 100%;
 			overflow-x: hidden;
 			position: absolute;
-			top: -110px;
+			top: -109px;
 			height: 110px;
 		}
 

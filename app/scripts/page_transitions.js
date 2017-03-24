@@ -8,6 +8,10 @@ $(function() {
 
 	var transition = function (event, pageID) {
 		$('.background').css(
+			'-webkit-clip-path', 
+			'circle(150vmax at 0px 0px)'
+		);
+		$('.background').css(
 			'clip-path', 
 			'circle(150vmax at 0px 0px)'
 		);
@@ -25,6 +29,10 @@ $(function() {
 			}
 			currentLocation = pageID;
 
+			$('.background').css(
+				'-webkit-clip-path', 
+				'circle(0vmax at 0px 0px)'
+			);
 			$('.background').css(
 				'clip-path', 
 				'circle(0vmax at 0px 0px)'
