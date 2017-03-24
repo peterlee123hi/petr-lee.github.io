@@ -41,7 +41,7 @@
 	.intro-block {
 		position: relative;
 		width: 100%;
-		height: 80vmin;
+		height: 80vh;
 		z-index: 0;
 	}
 
@@ -60,9 +60,16 @@
 		z-index: 20;
 		color: black;
 
-		#header-curve {
+		.intro-curve {
+			width: 100%;
+			overflow-x: hidden;
 			position: absolute;
 			top: -110px;
+			height: 110px;
+		}
+
+		#header-curve {
+			position: absolute;
 			width: 100%;
 			min-width: 800px;
 			height: 110px;
@@ -70,7 +77,6 @@
 
 		#header-curve-shadow {
 			position: absolute;
-			top: -110px;
 			width: 100%;
 			min-width: 800px;
 			height: 110px;
@@ -83,7 +89,7 @@
 
 	@media #{$small-and-down} {
 		.intro-about {
-			padding-top: 1em;
+			padding-top: 2em;
 		}
 	}
 }
