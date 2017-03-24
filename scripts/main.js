@@ -3,6 +3,11 @@
 $(function () {
 	var currentLocation = 'intro';
 
+	setTimeout(function () {
+		$('.intro-header').css('opacity', 1);
+		$('.links').css('opacity', 1);
+	}, 500);
+
 	var transition = function transition(event, pageID) {
 		$('.background').css('clip-path', 'circle(150vmax at 0px 0px)');
 
