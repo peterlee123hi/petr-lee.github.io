@@ -1,6 +1,11 @@
 $(function() {
 	var currentLocation = 'intro';
 
+	setTimeout(function() {
+		$('.intro-header').css('opacity', 1);
+		$('.links').css('opacity', 1);
+	}, 500);
+
 	var transition = function (event, pageID) {
 		$('.background').css(
 			'clip-path', 

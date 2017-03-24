@@ -7,6 +7,8 @@
 	.links {
 		position: fixed;
 		z-index: 11;
+		opacity: 0;
+		transition: 1s opacity;
 	}
 
 	.intro-header {
@@ -16,6 +18,8 @@
 		padding-right: 8vmin;
 		padding-bottom: 100vh;
 		z-index: 10;
+		opacity: 0;
+		transition: 1s opacity;
 
 		h2 {
 			color: color('blue-grey', 'lighten-2');
