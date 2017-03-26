@@ -9,6 +9,12 @@ section#web {
 
 	@media #{$small-and-down} {
 		.web-preview-link {
+			opacity: 1;
+		}
+	}
+
+	@media #{$small-and-down} {
+		.web-preview-link {
 			height: auto;
 		}
 	}
