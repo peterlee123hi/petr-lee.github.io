@@ -8,12 +8,12 @@ $(function() {
 
 	var transition = function (event, pageID) {
 		$('.background').css(
-			'-webkit-clip-path', 
-			'circle(150vmax at 0px 0px)'
+			'z-index', 
+			'99999999'
 		);
 		$('.background').css(
-			'clip-path', 
-			'circle(150vmax at 0px 0px)'
+			'opacity', 
+			'1'
 		);
 
 		setTimeout(function() {
@@ -30,14 +30,16 @@ $(function() {
 			currentLocation = pageID;
 
 			$('.background').css(
-				'-webkit-clip-path', 
-				'circle(0vmax at 0px 0px)'
+				'opacity', 
+				'0'
 			);
-			$('.background').css(
-				'clip-path', 
-				'circle(0vmax at 0px 0px)'
-			);
-		}, 1500);
+			setTimeout(function() {
+				$('.background').css(
+					'z-index', 
+					'-1'
+				);
+			}, 1000);
+		}, 1000);
 	};
 
 	$('.intro-btn').click(function(e) {

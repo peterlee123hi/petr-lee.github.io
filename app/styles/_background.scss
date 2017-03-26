@@ -3,12 +3,10 @@
 	max-width: 100%;
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
 	background-color: white;
-  -webkit-clip-path: circle(0vmax at 0px 0px);
-  clip-path: circle(0vmax at 0px 0px);
-	transition: 1.5s clip-path;
-	z-index: 999;
+	opacity: 0;
+	transition: 200ms opacity;
+	z-index: -1;
 	text-align: center;
 
 	img {

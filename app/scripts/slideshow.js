@@ -7,7 +7,7 @@ $(function() {
 			'top': 0,
 			'opacity': 1
 		}, {
-			'duration': 500,
+			'duration': 250,
 			'easing': 'linear'
 		});
 		setTimeout(function() {
@@ -15,7 +15,7 @@ $(function() {
 				'top': '20px',
 				'opacity': 0
 			}, {
-				'duration': 500,
+				'duration': 250,
 				'easing': 'linear'
 			});
 		}, 2000);
@@ -26,20 +26,20 @@ $(function() {
 		'laptop.png',
 		'openark-logo.png',
 		'microsoft.png',
-		'illustrator.svg'
+		'innod.png'
 	];
 	var widths = [
 		400,
 		400,
 		400,
-		160
+		400
 	];
 
 	var runSlideshow = function() {
 		index = index % images.length;
 		showSlide(widths[index], images[index]);
 		index += 1;
-		setTimeout(runSlideshow, 3000);
+		setTimeout(runSlideshow, 2600);
 	}
 
 	runSlideshow();

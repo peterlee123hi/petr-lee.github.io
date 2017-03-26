@@ -1,0 +1,51 @@
+section#web {
+	.web-preview-link {
+		margin-bottom: 2em;
+		height: 112px;
+		opacity: 0.5;
+		overflow-y: hidden;
+		transition: 200ms opacity;
+	}
+
+	@media #{$small-and-down} {
+		.web-preview-link {
+			height: auto;
+		}
+	}
+
+	.web-preview-link:hover {
+		box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+	}
+
+	.selected {
+		opacity: 1;
+	}
+
+	.web-content {
+		text-align: center;
+
+		.web-info {
+			width: 90%;
+			margin: auto;
+			padding: 2em;
+			margin-bottom: 2em;
+			height: 240px;
+			opacity: 1;
+			transition: 200ms opacity;
+		}
+
+		@media #{$medium-and-down} {
+			.web-info {
+				height: 280px;
+			}
+		}
+
+		h1 {
+			font-size: 1.8rem;
+		}
+
+		p {
+			font-size: 1.2rem;
+		}
+	}
+}

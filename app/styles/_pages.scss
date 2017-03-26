@@ -1,8 +1,21 @@
 .page {
 	max-width: 100%;
 	width: 100vw;
-	padding: 4vmin;
 	padding-top: 96px;
+
+	.nav-links {
+		.btn {
+			color: white;
+		}
+
+		.plain-btn {
+			color: black;
+		}
+
+		.plain-btn:hover {
+			color: white;
+		}
+	}
 }
 
 @media only screen and (max-width: 496px) {
@@ -12,31 +25,59 @@
 }
 
 section {
+	.project {
+		margin-bottom: 4em;
+	}
+
 	.section-intro {
 		position: relative;
 		top: 0;
 		left: 0;
+		padding-left: 4vmin;
+		padding-right: 4vmin;
+		padding-bottom: 4em;
 
 		h1 {
-			font-size: 12vmin;
+			font-size: 4rem;
 		}
 
 		p {
 			padding-left: 6px;
 			margin: 0;
-			font-size: 4vmin;
+			font-size: 2rem;
 			font-weight: 300;
 		}
+	}
 
-		@media #{$small-and-down} {
-			h1 {
-				font-size: 20vw;
-			}
-
-			p {
-				font-size: 8vw;
-			}
+	@media #{$small-and-down} {
+		.section-intro {
+			padding-bottom: 2em;
 		}
+	}
+
+	h4 {
+		font-weight: 900;
+		font-size: 2rem;
+		margin-bottom: 0;
+	}
+
+	h5 {
+		font-weight: 900;
+		font-size: 1.4rem;
+		margin-top: 8px;
+		color: color('blue', 'darken-2');
+	}
+
+	.images {
+		text-align: center;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	img.short-img {
+		width: 70%;
 	}
 }
 
