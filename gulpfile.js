@@ -81,6 +81,11 @@ gulp.task('favicons', () => {
     .pipe(gulp.dest('dist/favicons'));
 });
 
+gulp.task('code', () => {
+  return gulp.src('app/code/**/*')
+    .pipe(gulp.dest('dist/code'));
+});
+
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
@@ -169,7 +174,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'favicons', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'favicons', 'code', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

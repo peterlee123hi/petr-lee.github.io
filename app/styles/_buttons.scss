@@ -18,46 +18,50 @@
   }
 }
 
-.btn {
-  padding: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 100px;
-  line-height: 60px;
-  text-align: center;
-  background-color: white;
-  color: $dark-grey;
-}
-
-.btn:hover {
-  background-color: white;
-  color: $dark-grey;
-}
-
-.btn:focus {
-  background-color: white;
-  color: $dark-grey;
-}
-
-.btn.plain-btn:hover {
-  background-color: $dark-grey;
-  color: white;
-}
-
-.btn.plain-btn-alt {
-  background-color: $dark-grey;
-  color: white;
-}
-
-.btn.plain-btn-alt:hover {
-  background-color: white;
-  color: $dark-grey;
-}
-
-@media #{$small-and-down} {
+.links,
+.nav-links,
+section#code {
   .btn {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    line-height: 60px;
+    text-align: center;
+    background-color: white;
+    color: $dark-grey;
+  }
+
+  .btn:hover {
+    background-color: white;
+    color: $dark-grey;
+  }
+
+  .btn:focus {
+    background-color: white;
+    color: $dark-grey;
+  }
+
+  .btn.plain-btn:hover {
+    background-color: $dark-grey;
+    color: white;
+  }
+
+  .btn.plain-btn-alt {
+    background-color: $dark-grey;
+    color: white;
+  }
+
+  .btn.plain-btn-alt:hover {
+    background-color: white;
+    color: $dark-grey;
+  }
+
+  @media #{$small-and-down} {
+    .btn {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
   }
 }
