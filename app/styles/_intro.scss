@@ -1,124 +1,53 @@
-#intro {
-	background-color: #eee;
-	width: 100%;
-  	background: linear-gradient(135deg, #000, #3e549c, #529dd6);
-	color: white;
+main {
+  height: 80vmin;
+  text-align: center;
 
-	.links {
-		position: fixed;
-		z-index: 11;
-		opacity: 0;
-		transition: 1s opacity;
-	}
+  div {
+    width: 60%;
+    margin: 0 auto;
 
-	.intro-header {
-		position: fixed;
-		width: 100%;
-		padding-top: 5vmin;
-		padding-left: 8vmin;
-		padding-right: 8vmin;
-		padding-bottom: 100vh;
-		z-index: 10;
-		opacity: 0;
-		transition: 1s opacity;
+    h1 {
+      margin-bottom: 0;
+      font-weight: 300;
+      font-size: 100px;
+      letter-spacing: -4px;
+    }
 
-		h2 {
-			color: color('blue-grey', 'lighten-2');
-		}
+    h2 {
+      margin-top: 0;
+      color: color('grey', 'base');
+      font-weight: 200;
+      font-size: 36px;
+    }
+  }
 
-		.links {
-			margin-top: 2vmin;
+  a.btn {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: none;
+    color: white;
+    border-radius: 20px;
 
-			.btn {
-				margin-left: 0px;
-				margin-right: 20px;
-				margin-bottom: 4vmin;
-			}
-		}
+    transition: 0.2s;
+  }
+}
 
-		@media #{$small-and-down} {
-			.btn {
-				margin-bottom: 4vmin;
-				margin-left: 0px;
-				margin-right: 20px;
-			}
-		}
+@media #{$medium-and-down} {
+  main {
+    height: 80vh;
 
-		.intro-slideshow {
-			position: relative;
-			margin-top: 20px;
+    div {
+      width: 90%;
+      margin: 0 auto;
 
-			.intro-slide {
-				position: absolute;
-				display: inline-block;
-				width: 100vmin;
-				height: 400px;
-				left: 50%;
-				transform: translateX(-50%);
+      h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
 
-				top: -20px;
-				opacity: 0.2;
-
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-size: auto 200px;
-			}
-		}
-	}
-
-	.intro-block {
-		position: relative;
-		width: 100%;
-		height: 80vh;
-		min-height: 360px;
-		z-index: 0;
-	}
-
-	@media #{$medium-and-down} {
-		.intro-block {
-			height: 90vmin;
-		}
-	}
-
-	.intro-about {
-		position: relative;
-		background: white;
-		width: 100%;
-		padding-bottom: 4em;
-		line-height: 32px;
-		z-index: 20;
-		color: black;
-
-		.intro-curve {
-			width: 100%;
-			overflow-x: hidden;
-			position: absolute;
-			top: -109px;
-			height: 110px;
-		}
-
-		#header-curve {
-			position: absolute;
-			width: 100%;
-			min-width: 800px;
-			height: 110px;
-		}
-
-		#header-curve-shadow {
-			position: absolute;
-			width: 100%;
-			min-width: 800px;
-			height: 110px;
-	    display: block;
-	    filter: blur(10px);
-	    mix-blend-mode: overlay;
-	    opacity: .8;
-		}
-	}
-
-	@media #{$small-and-down} {
-		.intro-about {
-			padding-top: 2em;
-		}
-	}
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
 }
