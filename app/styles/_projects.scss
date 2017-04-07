@@ -1,11 +1,26 @@
 #projects {
-	padding-top: 6em;
-	padding-bottom: 6em;
+	padding-top: 8em;
+	padding-bottom: 0;
 	background-color: #111;
+
+	img {
+		width: 100%;
+	}
+
+	div.row {
+		padding-bottom: 2em;
+		margin-bottom: 0;
+	}
 
 	div.video-container {
 		box-shadow: rgba(0, 0, 0, 0.6) 0px 32px 44px 0px;
 		background-color: white;
+	}
+
+	@media #{$small-and-down} {
+		div.video-container, img {
+			margin-bottom: 4em;
+		}
 	}
 
 	div.project-desc {
@@ -27,7 +42,7 @@
 		p {
 			font-size: 1.4em;
 			font-weight: 200;
-			opacity: 0.9;
+			opacity: 0.8;
 		}
 	}
 }
