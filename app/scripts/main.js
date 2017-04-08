@@ -8,8 +8,8 @@ $(function() {
 
   var init = function() {
     var positionTop = $('html').offset().top;
-    $(".button-collapse").sideNav();
-    $(".modal").modal();
+    $('.button-collapse').sideNav();
+    $('.modal').modal();
 
     setTimeout(function() {
       $('main div h1').addClass('animated fadeInUp');
@@ -143,8 +143,8 @@ $(function() {
     var changeWebModal = function(webID) {
       $('#website-modal h3').text(webInfo[webID]['title']);
       $('#website-modal p').text(webInfo[webID]['desc']);
-      $('#website-modal a').attr("href", webInfo[webID]['link']);
-      $('#website-modal img').attr("src", "images/websites/" + webID + ".png");
+      $('#website-modal a').attr('href', webInfo[webID]['link']);
+      $('#website-modal img').attr('src', 'images/websites/' + webID + '.png');
     };
 
     $('.launchpad-btn').hover(function() {
