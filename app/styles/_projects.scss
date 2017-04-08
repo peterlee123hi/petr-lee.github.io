@@ -45,4 +45,12 @@
 			opacity: 0.8;
 		}
 	}
+
+	/* Setup animations. */
+	#sherlock-video,
+	#sherlock-desc,
+	#openark-preview,
+	#openark-desc {
+		opacity: 0;
+	}
 }

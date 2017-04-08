@@ -25,24 +25,6 @@
 			}
 		}
 
-		.sc-img {
-			font-size: 0;
-			line-height: 0;
-			background: color('grey', 'lighten-2');
-			padding-top: 20px;
-			border-radius: 5px;
-			display: inline-block;
-			box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-			-webkit-transition: 1s cubic-bezier(0.35,1.69,0.35,0.81);
-			transition: 1s cubic-bezier(0.35,1.69,0.35,0.81);
-
-			img {
-				width: 100%;
-				margin-bottom: -1px;
-				border-radius: 0 0 3px 3px;
-			}
-		}
-
 		.sc-img:before {
 			content: "...";
 			position: absolute;

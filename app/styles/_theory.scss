@@ -1,0 +1,28 @@
+#theory {
+	text-align: center;
+	padding-bottom: 0;
+
+	h1 {
+		letter-spacing: -0.05rem;
+		font-weight: 300;
+		margin-bottom: 0;
+	}
+
+	h4 {
+		margin-top: 0.4em;
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: color('grey', 'darken-1');
+	}
+
+	a.dropdown-button {
+		margin: 0.4em;
+		text-transform: none;
+		font-weight: 700;
+	}
+
+	ul li a {
+		color: color('blue', 'base');
+		text-transform: none;
+	}
+}

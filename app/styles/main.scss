@@ -4,11 +4,16 @@
 @import 'bower_components/materialize/sass/materialize';
 @import '_colors';
 @import '_gradients';
+@import '_animations';
 @import '_prism';
+@import '_fluffy';
 @import '_nav';
 @import '_intro';
 @import '_web';
 @import '_projects';
+@import '_design';
+@import '_theory';
+@import '_modal';
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -23,4 +28,13 @@ body {
 section {
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+#modal {
+	max-height: 75%;
+}
+
+.semi-bold {
+	font-weight: 700;
+	color: color('grey', 'darken-3');
 }
