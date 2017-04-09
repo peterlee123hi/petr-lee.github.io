@@ -11,6 +11,10 @@ $(function() {
     $('.button-collapse').sideNav();
     $('.modal').modal();
 
+    $('ul.side-nav li a').click(function() {
+      $('.button-collapse').sideNav('hide');
+    });
+
     setTimeout(function() {
       $('main div h1').addClass('animated fadeInUp');
     }, 500);
