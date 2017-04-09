@@ -6,6 +6,12 @@
 		width: 100%;
 	}
 
+	@media #{$small-and-down} {
+		img {
+			margin-bottom: 1em;
+		}
+	}
+
 	h3 {
 		font-weight: 700;
 		color: color('blue', 'darken-2');
