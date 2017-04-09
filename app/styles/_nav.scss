@@ -60,9 +60,12 @@ nav.darkNav {
     color: white;
   }
 
-  ul {
-    a {
-      color: white;
+
+  @media #{$large-and-up} {
+    ul {
+      a {
+        color: white;
+      }
     }
   }
 }

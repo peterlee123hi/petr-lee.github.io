@@ -38,3 +38,16 @@ section {
 	font-weight: 700;
 	color: color('grey', 'darken-3');
 }
+
+#tag {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline;
+	margin-top: 0;
+	padding: 5px;
+	background-color: color('blue', 'base');
+	color: white;
+	font-weight: 700;
+	border-bottom-right-radius: 5px;
+}
