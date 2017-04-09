@@ -1426,7 +1426,7 @@ $(function () {
 
       'csm': {
         'title': 'Computer Science Mentors',
-        'desc': 'After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. It is still a work in progress, but hopefully will become the official website in a few weeks at "csmentors.berkeley.edu".',
+        'desc': 'After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. Leading a group of students was fulfilling for me knowing that I could be a role model for others.',
         'link': 'http://csmberkeley.github.io/#/'
       },
 
