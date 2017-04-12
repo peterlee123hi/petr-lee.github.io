@@ -38,7 +38,9 @@
 }
 
 #organizations {
-	div.col {
-		margin: 0 auto;
+	div {
+		img {
+			max-width: 100%;
+		}
 	}
 }
