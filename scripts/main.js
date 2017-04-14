@@ -1308,8 +1308,8 @@ $(function () {
 			var halfH = this.clientHeight / 2;
 			var coorX = halfW - (event.screenX - this.offsetLeft);
 			var coorY = halfH - (event.screenY - this.offsetTop);
-			var degX = coorY / halfH * 3 + 'deg';
-			var degY = coorX / halfW * -3 + 'deg';
+			var degX = coorY / halfH * 2 + 'deg';
+			var degY = coorX / halfW * -2 + 'deg';
 
 			$(this).css('transform', function () {
 				return 'perspective(600px) translate3d(0, -2px, 0) scale(1.1) rotateX(' + degX + ') rotateY(' + degY + ')';
@@ -1456,6 +1456,18 @@ $(function () {
         'title': 'Launchpad',
         'desc': 'After attending a tech talk by the founders of Box, I was inspired to gather the most passionate and intelligent students at UC Berkeley to solve real-world problems with artificial intelligence, machine learning, and data science.',
         'link': 'https://callaunchpad.org/#/'
+      },
+
+      'sherlock': {
+        'title': 'Project Sherlock',
+        'desc': 'My team project for Launchpad was Sherlock who is an artificial intelligence that recognizes different things live through webcams. Aside from Sherlock, we train convolutional neural networks for different computer vision tasks.',
+        'link': 'https://sherlock.callaunchpad.org/'
+      },
+
+      'lab': {
+        'title': 'Web Lab',
+        'desc': 'As a project leader, I also had my team of developers create a web lab to showcase live online demos of mini-projects.',
+        'link': 'https://lab.callaunchpad.org/'
       }
     };
 
@@ -1488,6 +1500,14 @@ $(function () {
 
     $('.alary-btn').hover(function () {
       changeWebModal('alary');
+    });
+
+    $('.sherlock-btn').hover(function () {
+      changeWebModal('sherlock');
+    });
+
+    $('.lab-btn').hover(function () {
+      changeWebModal('lab');
     });
   };
 
