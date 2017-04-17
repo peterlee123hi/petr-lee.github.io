@@ -39,19 +39,6 @@ section {
 	color: color('grey', 'darken-3');
 }
 
-#tag {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: inline;
-	margin-top: 0;
-	padding: 5px;
-	background-color: color('blue', 'base');
-	color: white;
-	font-weight: 700;
-	border-bottom-right-radius: 5px;
-}
-
 .masonry {
 	img {
 		width: 90%;
@@ -82,3 +69,10 @@ section {
 .size-1of1 { width: 100%; }
 .size-1of2 { width: 50%; }
 .size-1of3 { width: 33.333%; }
+
+@media #{$small-and-down} {
+	.materialboxed.active {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
