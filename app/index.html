@@ -60,6 +60,7 @@
           <li><a href="#web">Web</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#design">Design</a></li>
+          <li><a href="#photography">Photography</a></li>
           <li><a href="#theory">Theory</a></li>
           <li><a class="waves-effect waves-light btn blue" id="resume-link" href="./peter_lee_resume.pdf" target="_blank">Resume</a></li>
         </ul>
@@ -67,6 +68,7 @@
           <li><a href="#web">Web</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#design">Design</a></li>
+          <li><a href="#photography">Photography</a></li>
           <li><a href="#theory">Theory</a></li>
           <li><a href="./peter_lee_resume.pdf" target="_blank">Resume</a></li>
         </ul>
@@ -302,27 +304,40 @@
       </div>
     </div>
   </section>
-
-  <div data-fluffy-container id="design">
-    <div data-fluffy-content>
-      <p id="tag" class="hide-on-med-and-up">Swipe</p>
-      <img src="images/designs/workspace.png">
-      <img src="images/designs/AuKoi.png">
-      <img src="images/designs/ESW.png">
-      <img src="images/designs/evening_skyline.png">
-      <img src="images/designs/deskshot.png">
-      <img src="images/designs/MicroJobs-logo.png">
-      <img src="images/designs/csm-lesson.png">
-      <img src="images/designs/mountains.png">
-      <img src="images/designs/ircb.png">
+  
+  <section id="design" class="container clearfix">
+    <h1>Graphic Design</h1>
+    <h4>I love flat design.</h4>
+    <div class="masonry" data-columns>
+      <img class="materialboxed z-depth-4" src="images/designs/workspace.png">
+      <img class="materialboxed z-depth-4" src="images/designs/AuKoi.png">
+      <img class="materialboxed z-depth-4" src="images/designs/ESW.png">
+      <img class="materialboxed z-depth-4" src="images/designs/evening_skyline.png">
+      <img class="materialboxed z-depth-4" src="images/designs/deskshot.png">
+      <img class="materialboxed z-depth-4" src="images/designs/MicroJobs-logo.png">
+      <img class="materialboxed z-depth-4" src="images/designs/csm-lesson.png">
+      <img class="materialboxed z-depth-4" src="images/designs/mountains.png">
+      <img class="materialboxed z-depth-4" src="images/designs/ircb.png">
     </div>
-  </div>
+  </section>
 
-  <section id="theory">
+  <section id="photography" class="container clearfix">
+    <h1>Photography</h1>
+    <h4>Photos from my android.</h4>
+    <div class="masonry" data-columns>
+      <img class="materialboxed z-depth-4" src="images/photos/home.jpg">
+      <img class="materialboxed z-depth-4" src="images/photos/nasa.jpg">
+      <img class="materialboxed z-depth-4" src="images/photos/nature.jpg">
+      <img class="materialboxed z-depth-4" src="images/photos/lubbock.jpg">
+      <img class="materialboxed z-depth-4" src="images/photos/science.jpg">
+    </div>
+  </section>
+
+  <section id="theory" class="clearfix">
     <div class="row"> 
       <div class="col s12">
         <h1>Competitive Programming</h1>
-        <h4>My Personal Collection of Algorithms</h4>
+        <h4>Collection of algorithms.</h4>
         <ul id='templates' class='dropdown-content'>
           <li file="main.cpp" language="c_cpp"><a>C++</a></li>
           <li class="selected" file="main_lite.cpp" language="c_cpp"><a>C++ Lite</a></li>
@@ -418,10 +433,10 @@
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
-  <script src="scripts/fluffy.js"></script>
+  <script src="scripts/scrollreveal.js"></script>
+  <script src="scripts/masonry.js"></script>
   <script src="scripts/prism.js"></script>
   <script src="scripts/editor.js"></script>
-  <script src="scripts/modal.js"></script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </body>

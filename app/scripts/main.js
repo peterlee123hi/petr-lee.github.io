@@ -32,6 +32,11 @@ $(function() {
     setTimeout(function() {
       $('div.navbar-fixed').css('opacity', '0.95');
     }, 2000);
+
+    $('.materialboxed').materialbox();
+
+    window.sr = ScrollReveal();
+    sr.reveal('#web .col');
   };
 
   /*** NAV LINKS ***/

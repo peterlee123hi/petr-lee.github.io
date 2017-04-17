@@ -1,6 +1,27 @@
 #design {
-	img {
-		height: 60vh;
-		max-height: 400px;
+	text-align: center;
+
+	h1 {
+		letter-spacing: -0.05rem;
+		font-weight: 300;
+		margin-bottom: 0;
+	}
+
+	@media #{$small-and-down} {
+		h1 {
+			font-size: 3rem;
+		}
+
+		h4 {
+			font-size: 1.6rem;
+		}
+	}
+
+	h4 {
+		margin-top: 0.4em;
+		margin-bottom: 1.2em;
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: color('grey', 'darken-3');
 	}
 }
