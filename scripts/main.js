@@ -2,1090 +2,359 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-/*! Fluffy.js v2.1.1 | (c) 2016 Sebastian Prein | http://mzdr.github.io/fluffy.js/ */
-
-// using https://github.com/umdjs/umd/blob/master/templates/returnExports.js
-(function register(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define('Fluffy', factory);
-    } else {
-        root.Fluffy = factory();
-
-        // in non-module mode we initialize Fluffy automatically,
-        // otherwise we would have breaking changes ;)
-        switch (document.readyState) {
-            case 'loading':
-            case 'interactive':
-                document.onreadystatechange = function onReadyStateChange() {
-                    if (document.readyState == 'complete') {
-                        root.Fluffy.detect();
-                    }
-                };
-                break;
-            case 'complete':
-                root.Fluffy.detect();
-                break;
-        }
+!function () {
+  'use strict';
+  function e(n) {
+    return 'undefined' == typeof this || Object.getPrototypeOf(this) !== e.prototype ? new e(n) : (O = this, O.version = '3.3.4', O.tools = new E(), O.isSupported() ? (O.tools.extend(O.defaults, n || {}), O.defaults.container = t(O.defaults), O.store = { elements: {}, containers: [] }, O.sequences = {}, O.history = [], O.uid = 0, O.initialized = !1) : 'undefined' != typeof console && null !== console, O);
+  }function t(e) {
+    if (e && e.container) {
+      if ('string' == typeof e.container) return window.document.documentElement.querySelector(e.container);if (O.tools.isNode(e.container)) return e.container;
+    }return O.defaults.container;
+  }function n(e, t) {
+    return 'string' == typeof e ? Array.prototype.slice.call(t.querySelectorAll(e)) : O.tools.isNode(e) ? [e] : O.tools.isNodeList(e) ? Array.prototype.slice.call(e) : [];
+  }function i() {
+    return ++O.uid;
+  }function o(e, t, n) {
+    t.container && (t.container = n), e.config ? e.config = O.tools.extendClone(e.config, t) : e.config = O.tools.extendClone(O.defaults, t), 'top' === e.config.origin || 'bottom' === e.config.origin ? e.config.axis = 'Y' : e.config.axis = 'X';
+  }function r(e) {
+    var t = window.getComputedStyle(e.domEl);e.styles || (e.styles = { transition: {}, transform: {}, computed: {} }, e.styles.inline = e.domEl.getAttribute('style') || '', e.styles.inline += '; visibility: visible; ', e.styles.computed.opacity = t.opacity, t.transition && 'all 0s ease 0s' !== t.transition ? e.styles.computed.transition = t.transition + ', ' : e.styles.computed.transition = ''), e.styles.transition.instant = s(e, 0), e.styles.transition.delayed = s(e, e.config.delay), e.styles.transform.initial = ' -webkit-transform:', e.styles.transform.target = ' -webkit-transform:', a(e), e.styles.transform.initial += 'transform:', e.styles.transform.target += 'transform:', a(e);
+  }function s(e, t) {
+    var n = e.config;return '-webkit-transition: ' + e.styles.computed.transition + '-webkit-transform ' + n.duration / 1e3 + 's ' + n.easing + ' ' + t / 1e3 + 's, opacity ' + n.duration / 1e3 + 's ' + n.easing + ' ' + t / 1e3 + 's; transition: ' + e.styles.computed.transition + 'transform ' + n.duration / 1e3 + 's ' + n.easing + ' ' + t / 1e3 + 's, opacity ' + n.duration / 1e3 + 's ' + n.easing + ' ' + t / 1e3 + 's; ';
+  }function a(e) {
+    var t,
+        n = e.config,
+        i = e.styles.transform;t = 'top' === n.origin || 'left' === n.origin ? /^-/.test(n.distance) ? n.distance.substr(1) : '-' + n.distance : n.distance, parseInt(n.distance) && (i.initial += ' translate' + n.axis + '(' + t + ')', i.target += ' translate' + n.axis + '(0)'), n.scale && (i.initial += ' scale(' + n.scale + ')', i.target += ' scale(1)'), n.rotate.x && (i.initial += ' rotateX(' + n.rotate.x + 'deg)', i.target += ' rotateX(0)'), n.rotate.y && (i.initial += ' rotateY(' + n.rotate.y + 'deg)', i.target += ' rotateY(0)'), n.rotate.z && (i.initial += ' rotateZ(' + n.rotate.z + 'deg)', i.target += ' rotateZ(0)'), i.initial += '; opacity: ' + n.opacity + ';', i.target += '; opacity: ' + e.styles.computed.opacity + ';';
+  }function l(e) {
+    var t = e.config.container;t && O.store.containers.indexOf(t) === -1 && O.store.containers.push(e.config.container), O.store.elements[e.id] = e;
+  }function c(e, t, n) {
+    var i = { target: e, config: t, interval: n };O.history.push(i);
+  }function f() {
+    if (O.isSupported()) {
+      y();for (var e = 0; e < O.store.containers.length; e++) {
+        O.store.containers[e].addEventListener('scroll', d), O.store.containers[e].addEventListener('resize', d);
+      }O.initialized || (window.addEventListener('scroll', d), window.addEventListener('resize', d), O.initialized = !0);
+    }return O;
+  }function d() {
+    T(y);
+  }function u() {
+    var e, t, n, i;O.tools.forOwn(O.sequences, function (o) {
+      i = O.sequences[o], e = !1;for (var r = 0; r < i.elemIds.length; r++) {
+        n = i.elemIds[r], t = O.store.elements[n], q(t) && !e && (e = !0);
+      }i.active = e;
+    });
+  }function y() {
+    var e, t;u(), O.tools.forOwn(O.store.elements, function (n) {
+      t = O.store.elements[n], e = w(t), g(t) ? (t.config.beforeReveal(t.domEl), e ? t.domEl.setAttribute('style', t.styles.inline + t.styles.transform.target + t.styles.transition.delayed) : t.domEl.setAttribute('style', t.styles.inline + t.styles.transform.target + t.styles.transition.instant), p('reveal', t, e), t.revealing = !0, t.seen = !0, t.sequence && m(t, e)) : v(t) && (t.config.beforeReset(t.domEl), t.domEl.setAttribute('style', t.styles.inline + t.styles.transform.initial + t.styles.transition.instant), p('reset', t), t.revealing = !1);
+    });
+  }function m(e, t) {
+    var n = 0,
+        i = 0,
+        o = O.sequences[e.sequence.id];o.blocked = !0, t && 'onload' === e.config.useDelay && (i = e.config.delay), e.sequence.timer && (n = Math.abs(e.sequence.timer.started - new Date()), window.clearTimeout(e.sequence.timer)), e.sequence.timer = { started: new Date() }, e.sequence.timer.clock = window.setTimeout(function () {
+      o.blocked = !1, e.sequence.timer = null, d();
+    }, Math.abs(o.interval) + i - n);
+  }function p(e, t, n) {
+    var i = 0,
+        o = 0,
+        r = 'after';switch (e) {case 'reveal':
+        o = t.config.duration, n && (o += t.config.delay), r += 'Reveal';break;case 'reset':
+        o = t.config.duration, r += 'Reset';}t.timer && (i = Math.abs(t.timer.started - new Date()), window.clearTimeout(t.timer.clock)), t.timer = { started: new Date() }, t.timer.clock = window.setTimeout(function () {
+      t.config[r](t.domEl), t.timer = null;
+    }, o - i);
+  }function g(e) {
+    if (e.sequence) {
+      var t = O.sequences[e.sequence.id];return t.active && !t.blocked && !e.revealing && !e.disabled;
+    }return q(e) && !e.revealing && !e.disabled;
+  }function w(e) {
+    var t = e.config.useDelay;return 'always' === t || 'onload' === t && !O.initialized || 'once' === t && !e.seen;
+  }function v(e) {
+    if (e.sequence) {
+      var t = O.sequences[e.sequence.id];return !t.active && e.config.reset && e.revealing && !e.disabled;
+    }return !q(e) && e.config.reset && e.revealing && !e.disabled;
+  }function b(e) {
+    return { width: e.clientWidth, height: e.clientHeight };
+  }function h(e) {
+    if (e && e !== window.document.documentElement) {
+      var t = x(e);return { x: e.scrollLeft + t.left, y: e.scrollTop + t.top };
+    }return { x: window.pageXOffset, y: window.pageYOffset };
+  }function x(e) {
+    var t = 0,
+        n = 0,
+        i = e.offsetHeight,
+        o = e.offsetWidth;do {
+      isNaN(e.offsetTop) || (t += e.offsetTop), isNaN(e.offsetLeft) || (n += e.offsetLeft), e = e.offsetParent;
+    } while (e);return { top: t, left: n, height: i, width: o };
+  }function q(e) {
+    function t() {
+      var t = c + a * s,
+          n = f + l * s,
+          i = d - a * s,
+          y = u - l * s,
+          m = r.y + e.config.viewOffset.top,
+          p = r.x + e.config.viewOffset.left,
+          g = r.y - e.config.viewOffset.bottom + o.height,
+          w = r.x - e.config.viewOffset.right + o.width;return t < g && i > m && n > p && y < w;
+    }function n() {
+      return 'fixed' === window.getComputedStyle(e.domEl).position;
+    }var i = x(e.domEl),
+        o = b(e.config.container),
+        r = h(e.config.container),
+        s = e.config.viewFactor,
+        a = i.height,
+        l = i.width,
+        c = i.top,
+        f = i.left,
+        d = c + a,
+        u = f + l;return t() || n();
+  }function E() {}var O, T;e.prototype.defaults = { origin: 'bottom', distance: '20px', duration: 500, delay: 0, rotate: { x: 0, y: 0, z: 0 }, opacity: 0, scale: .9, easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)', container: window.document.documentElement, mobile: !0, reset: !1, useDelay: 'always', viewFactor: .2, viewOffset: { top: 0, right: 0, bottom: 0, left: 0 }, beforeReveal: function beforeReveal(e) {}, beforeReset: function beforeReset(e) {}, afterReveal: function afterReveal(e) {}, afterReset: function afterReset(e) {} }, e.prototype.isSupported = function () {
+    var e = document.documentElement.style;return 'WebkitTransition' in e && 'WebkitTransform' in e || 'transition' in e && 'transform' in e;
+  }, e.prototype.reveal = function (e, s, a, d) {
+    var u, y, m, p, g, w;if (void 0 !== s && 'number' == typeof s ? (a = s, s = {}) : void 0 !== s && null !== s || (s = {}), u = t(s), y = n(e, u), !y.length) return O;a && 'number' == typeof a && (w = i(), g = O.sequences[w] = { id: w, interval: a, elemIds: [], active: !1 });for (var v = 0; v < y.length; v++) {
+      p = y[v].getAttribute('data-sr-id'), p ? m = O.store.elements[p] : (m = { id: i(), domEl: y[v], seen: !1, revealing: !1 }, m.domEl.setAttribute('data-sr-id', m.id)), g && (m.sequence = { id: g.id, index: g.elemIds.length }, g.elemIds.push(m.id)), o(m, s, u), r(m), l(m), O.tools.isMobile() && !m.config.mobile || !O.isSupported() ? (m.domEl.setAttribute('style', m.styles.inline), m.disabled = !0) : m.revealing || m.domEl.setAttribute('style', m.styles.inline + m.styles.transform.initial);
+    }return !d && O.isSupported() && (c(e, s, a), O.initTimeout && window.clearTimeout(O.initTimeout), O.initTimeout = window.setTimeout(f, 0)), O;
+  }, e.prototype.sync = function () {
+    if (O.history.length && O.isSupported()) {
+      for (var e = 0; e < O.history.length; e++) {
+        var t = O.history[e];O.reveal(t.target, t.config, t.interval, !0);
+      }f();
+    }return O;
+  }, E.prototype.isObject = function (e) {
+    return null !== e && 'object' == (typeof e === 'undefined' ? 'undefined' : _typeof(e)) && e.constructor === Object;
+  }, E.prototype.isNode = function (e) {
+    return 'object' == _typeof(window.Node) ? e instanceof window.Node : e && 'object' == (typeof e === 'undefined' ? 'undefined' : _typeof(e)) && 'number' == typeof e.nodeType && 'string' == typeof e.nodeName;
+  }, E.prototype.isNodeList = function (e) {
+    var t = Object.prototype.toString.call(e),
+        n = /^\[object (HTMLCollection|NodeList|Object)\]$/;return 'object' == _typeof(window.NodeList) ? e instanceof window.NodeList : e && 'object' == (typeof e === 'undefined' ? 'undefined' : _typeof(e)) && n.test(t) && 'number' == typeof e.length && (0 === e.length || this.isNode(e[0]));
+  }, E.prototype.forOwn = function (e, t) {
+    if (!this.isObject(e)) throw new TypeError('Expected "object", but received "' + (typeof e === 'undefined' ? 'undefined' : _typeof(e)) + '".');for (var n in e) {
+      e.hasOwnProperty(n) && t(n);
     }
-})(window, function Fluffy() {
+  }, E.prototype.extend = function (e, t) {
+    return this.forOwn(t, function (n) {
+      this.isObject(t[n]) ? (e[n] && this.isObject(e[n]) || (e[n] = {}), this.extend(e[n], t[n])) : e[n] = t[n];
+    }.bind(this)), e;
+  }, E.prototype.extendClone = function (e, t) {
+    return this.extend(this.extend({}, e), t);
+  }, E.prototype.isMobile = function () {
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    );
+  }, T = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (e) {
+    window.setTimeout(e, 1e3 / 60);
+  }, 'function' == typeof define && 'object' == _typeof(define.amd) && define.amd ? define(function () {
+    return e;
+  }) : 'undefined' != typeof module && module.exports ? module.exports = e : window.ScrollReveal = e;
+}();
+'use strict';
+
+var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _typeof = typeof Symbol === 'function' && _typeof2(Symbol.iterator) === 'symbol' ? function (obj) {
+  return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+} : function (obj) {
+  return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+};
+
+/*!
+ * Salvattore 1.0.9 by @rnmp and @ppold
+ * https://github.com/rnmp/salvattore
+ */
+!function (e, t) {
+  'function' == typeof define && define.amd ? define([], t) : 'object' == (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) ? module.exports = t() : e.salvattore = t();
+}(window, function () {
+  /*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
+  window.matchMedia || (window.matchMedia = function () {
     'use strict';
 
-    /**
-     * Fluffy version.
-     *
-     * @type {String}
-     */
-
-    var version = '2.1.1';
-
-    /**
-     * Simple detection of several features needed for Fluffy to run properly.
-     *
-     * @type {Boolean}
-     */
-    var featureSupport = !!document.querySelector && !!window.addEventListener && !!window.requestAnimationFrame;
-
-    /**
-     * Simple detection if we're on a touch device or not. I know, not really
-     * reliable.
-     *
-     * @see http://www.stucox.com/blog/you-cant-detect-a-touchscreen/
-     * @type {Boolean}
-     */
-    var isTouch = 'ontouchstart' in window;
-
-    /**
-     * This is the default CSS property used for shifting the Fluffy content.
-     * During the automatic initialization there is a routine which checks if
-     * it needs to be prefixed.
-     *
-     * @type {String}
-     */
-    var shiftProperty = 'transform';
-
-    /**
-     * All available smart size attributes.
-     *
-     * @type {Array}
-     */
-    var smartSize = ['smallest', 'average', 'largest'];
-
-    /**
-     * Defines the maximum decimal places when rounding in calculations.
-     *
-     * @type {Number}
-     */
-    var maxDecimalPlaces = 3;
-
-    /**
-     * Those are the default settings used by the FluffyObject class.
-     *
-     * @type {Object}
-     */
-    var defaults = {
-
-        /**
-         * If no trigger selector is given, the Fluffy container is also
-         * the trigger area.
-         *
-         * @type {String}
-         */
-        triggerSelector: null,
-
-        /**
-         * Displays the current position within the scrollable content in
-         * forms scrollbars for each dimension.
-         *
-         * @type {Boolean}
-         */
-        showScrollbars: true,
-
-        /**
-         * Automatically adjust the height of the content container according
-         * to the smallest, largest or the average height of all items found.
-         *
-         * Allowed values: false, 'smallest', 'average', 'largest'.
-         *
-         * @type {Boolean}
-         */
-        smartHeight: false,
-
-        /**
-         * Automatically adjust the width of the content container according
-         * to the smallest, largest or the average width of all items found.
-         *
-         * Allowed values: false, 'smallest', 'average', 'largest'.
-         *
-         * @type {Boolean}
-         */
-        smartWidth: false,
-
-        /**
-         * Define which dimension to trigger movement for.
-         *
-         * Allowed values: 'x', 'y', 'xy'.
-         *
-         * @type {String}
-         */
-        triggerDirection: 'x',
-
-        /**
-         * The higher the value the more lazier the reaction to the mouse
-         * movement will be.
-         *
-         * @type {Number}
-         */
-        mouseDamp: 20,
-
-        /**
-         * Adds space (in pixel) to the trigger area where no action happens.
-         *
-         * @type {Number}
-         */
-        mousePadding: 60
+    var e = window.styleMedia || window.media;if (!e) {
+      var t = document.createElement('style'),
+          n = document.getElementsByTagName('script')[0],
+          r = null;t.type = 'text/css', t.id = 'matchmediajs-test', n.parentNode.insertBefore(t, n), r = 'getComputedStyle' in window && window.getComputedStyle(t, null) || t.currentStyle, e = { matchMedium: function matchMedium(e) {
+          var n = '@media ' + e + '{ #matchmediajs-test { width: 1px; } }';return t.styleSheet ? t.styleSheet.cssText = n : t.textContent = n, '1px' === r.width;
+        } };
+    }return function (t) {
+      return { matches: e.matchMedium(t || 'all'), media: t || 'all' };
     };
+  }()), /*! matchMedia() polyfill addListener/removeListener extension. Author & copyright (c) 2012: Scott Jehl. Dual MIT/BSD license */
+  function () {
+    'use strict';
 
-    /**
-     * Size of the screen.
-     *
-     * @type {Object}
-     */
-    var screenSize = {
-        x: window.innerWidth,
-        y: window.innerHeight
-    };
-
-    /**
-     * Fluffy stores all instantiated objects in this variable.
-     *
-     * @type {Array}
-     */
-    var fluffyObjects = [];
-
-    /**
-     * Just a simple console helper.
-     *
-     * @private
-     * @param {Array|String} messages The message or array of messages.
-     * @param {String} type Type of message. Could be 'warn', 'error', 'log' or 'debug' for example.
-     * @return {Boolean}
-     */
-    function _(messages, type) {
-
-        // default console message is of type debug
-        type = typeof type !== 'undefined' ? type : 'debug';
-
-        if (!window.console || !console[type]) {
-            return true;
-        }
-
-        console[type].call(window.console, messages);
-
-        return true;
-    }
-
-    /**
-     * Registers global listener to the resize event that will handle all
-     * instances of Fluffy.
-     */
-    function _registerResizeListener() {
-
-        // need a debouncer
-        var debounce;
-
-        window.addEventListener('resize', function onResize(e) {
-
-            // wait for it
-            if (debounce) {
-                clearTimeout(debounce);
+    if (window.matchMedia && window.matchMedia('all').addListener) return !1;var e = window.matchMedia,
+        t = e('only all').matches,
+        n = !1,
+        r = 0,
+        a = [],
+        i = function i(t) {
+      clearTimeout(r), r = setTimeout(function () {
+        for (var t = 0, n = a.length; n > t; t++) {
+          var r = a[t].mql,
+              i = a[t].listeners || [],
+              o = e(r.media).matches;if (o !== r.matches) {
+            r.matches = o;for (var c = 0, l = i.length; l > c; c++) {
+              i[c].call(window, r);
             }
+          }
+        }
+      }, 30);
+    };window.matchMedia = function (r) {
+      var o = e(r),
+          c = [],
+          l = 0;return o.addListener = function (e) {
+        t && (n || (n = !0, window.addEventListener('resize', i, !0)), 0 === l && (l = a.push({ mql: o, listeners: c })), c.push(e));
+      }, o.removeListener = function (e) {
+        for (var t = 0, n = c.length; n > t; t++) {
+          c[t] === e && c.splice(t, 1);
+        }
+      }, o;
+    };
+  }(), function () {
+    'use strict';
 
-            debounce = setTimeout(function () {
-                for (var i = 0; i < fluffyObjects.length; i++) {
-                    fluffyObjects[i].updateContentSize();
-                    fluffyObjects[i].updateContentPosition();
-                }
-            }, 100);
+    for (var e = 0, t = ['ms', 'moz', 'webkit', 'o'], n = 0; n < t.length && !window.requestAnimationFrame; ++n) {
+      window.requestAnimationFrame = window[t[n] + 'RequestAnimationFrame'], window.cancelAnimationFrame = window[t[n] + 'CancelAnimationFrame'] || window[t[n] + 'CancelRequestAnimationFrame'];
+    }window.requestAnimationFrame || (window.requestAnimationFrame = function (t, n) {
+      var r = new Date().getTime(),
+          a = Math.max(0, 16 - (r - e)),
+          i = window.setTimeout(function () {
+        t(r + a);
+      }, a);return e = r + a, i;
+    }), window.cancelAnimationFrame || (window.cancelAnimationFrame = function (e) {
+      clearTimeout(e);
+    });
+  }(), 'function' != typeof window.CustomEvent && !function () {
+    'use strict';
+
+    function e(e, t) {
+      t = t || { bubbles: !1, cancelable: !1, detail: void 0 };var n = document.createEvent('CustomEvent');return n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail), n;
+    }e.prototype = window.Event.prototype, window.CustomEvent = e;
+  }();var e = function (e, t, n) {
+    'use strict';
+
+    var r = {},
+        a = [],
+        i = [],
+        o = [],
+        c = function c(e, t, n) {
+      e.dataset ? e.dataset[t] = n : e.setAttribute('data-' + t, n);
+    };return r.obtainGridSettings = function (t) {
+      var n = e.getComputedStyle(t, ':before'),
+          r = n.getPropertyValue('content').slice(1, -1),
+          a = r.match(/^\s*(\d+)(?:\s?\.(.+))?\s*$/),
+          i = 1,
+          o = [];return a ? (i = a[1], o = a[2], o = o ? o.split('.') : ['column']) : (a = r.match(/^\s*\.(.+)\s+(\d+)\s*$/), a && (o = a[1], i = a[2], i && (i = i.split('.')))), { numberOfColumns: i, columnClasses: o };
+    }, r.addColumns = function (e, n) {
+      for (var a, i = r.obtainGridSettings(e), o = i.numberOfColumns, l = i.columnClasses, s = new Array(+o), u = t.createDocumentFragment(), d = o; 0 !== d--;) {
+        a = '[data-columns] > *:nth-child(' + o + 'n-' + d + ')', s.push(n.querySelectorAll(a));
+      }s.forEach(function (e) {
+        var n = t.createElement('div'),
+            r = t.createDocumentFragment();n.className = l.join(' '), Array.prototype.forEach.call(e, function (e) {
+          r.appendChild(e);
+        }), n.appendChild(r), u.appendChild(n);
+      }), e.appendChild(u), c(e, 'columns', o);
+    }, r.removeColumns = function (n) {
+      var r = t.createRange();r.selectNodeContents(n);var a = Array.prototype.filter.call(r.extractContents().childNodes, function (t) {
+        return t instanceof e.HTMLElement;
+      }),
+          i = a.length,
+          o = a[0].childNodes.length,
+          l = new Array(o * i);Array.prototype.forEach.call(a, function (e, t) {
+        Array.prototype.forEach.call(e.children, function (e, n) {
+          l[n * i + t] = e;
         });
-    }
-
-    /**
-     * This represents a single Fluffy object.
-     *
-     * @param {HTMLElement} containerNode A DOM node representing a Fluffy container.
-     */
-    function FluffyObject(containerNode) {
-
-        /**
-         * This holds the Fluffy container.
-         *
-         * @type {HTMLElement}
-         */
-        this.container = null;
-
-        /**
-         * this holds the actual Fluffy content.
-         *
-         * @type {HTMLElement}
-         */
-        this.content = null;
-
-        /**
-         * This holds all child nodes of the Fluffy content.
-         *
-         * @type {NodeList}
-         */
-        this.items = null;
-
-        /**
-         * This holds the (separate) trigger element where the actual
-         * interaction between the input device and the Fluffy container
-         * happens. If no 'triggerSelector' has been provided the container
-         * itself will be used for triggering.
-         *
-         * @type {HTMLElement}
-         */
-        this.trigger = null;
-
-        /**
-         * This holds the available scrollbars of the Fluffy container.
-         *
-         * @type {Object}
-         */
-        this.scrollbars = {};
-
-        /**
-         * This holds all relevant information about the mouse position,
-         * including the MouseObserver.
-         *
-         * @type {Object}
-         */
-        this.mouse = {
-            real: { x: 0, y: 0 },
-            fake: { x: 0, y: 0 },
-            last: { x: 0, y: 0 },
-            observer: null
-        };
-
-        /**
-         * This holds all relevant ratios needed for calculations.
-         *
-         * @type {Object}
-         */
-        this.ratios = {};
-
-        /**
-         * This holds the default settings as well as the user set settings.
-         *
-         * @type {Object}
-         */
-        this.settings = {};
-
-        /**
-         * This holds all cached sizes for all relevant DOM nodes.
-         *
-         * @type {Object}
-         */
-        this.sizes = {};
-
-        /**
-         * Removes text nodes and unneeded DOM elements from the content.
-         *
-         * @public
-         */
-        this.cleanContent = function cleanContent() {
-            for (var i = 0; i < this.items.length; i++) {
-                var current = this.items[i];
-                var next = current.nextSibling;
-                var prev = current.previousSibling;
-                var parent = current.parentNode;
-
-                // remove text nodes
-                if (current !== null && current.nodeType === 3) {
-                    parent.removeChild(current);
-                }
-
-                if (prev !== null && prev.nodeType === 3) {
-                    parent.removeChild(prev);
-                }
-
-                if (next !== null && next.nodeType === 3) {
-                    parent.removeChild(next);
-                }
-            }
-        };
-
-        /**
-         * This method will do last preparations like adding scrollbars and
-         * setting important CSS styling.
-         *
-         * @public
-         */
-        this.prepare = function prepare() {
-
-            // remove invisible DOM nodes and anything that could f*ck up the
-            // visual output of this instance
-            this.cleanContent();
-
-            // depending on the dimension to trigger the relevant scrollbars
-            // will be created and attached to the container
-            this.attachScrollbars();
-
-            // get mouse observer instance
-            this.mouse.observer = new MouseObserver(this);
-
-            // set important styling
-            this.container.style.overflow = 'hidden';
-
-            // adjust styling to touch devices
-            if (isTouch) {
-                this.container.style.webkitOverflowScrolling = 'touch';
-                this.container.style.overflowX = this.settings.triggerDirection.indexOf('x') >= 0 ? 'scroll' : 'hidden';
-                this.container.style.overflowY = this.settings.triggerDirection.indexOf('y') >= 0 ? 'scroll' : 'hidden';
-            }
-        };
-
-        /**
-         * Attaches scrollbars to the container depending on which dimension
-         * should be triggered and if showScrollbars is set to true.
-         *
-         * @public
-         */
-        this.attachScrollbars = function attachScrollbars() {
-
-            // scrollbar disabled
-            if (!this.settings.showScrollbars) {
-                return;
-            }
-
-            var whichToCreate = [];
-
-            // add horizontal scrollbar
-            if (this.settings.triggerDirection.indexOf('x') >= 0) {
-                whichToCreate.push('horizontal');
-            }
-
-            // add vertical scrollbar
-            if (this.settings.triggerDirection.indexOf('y') >= 0) {
-                whichToCreate.push('vertical');
-            }
-
-            // create scrollbar container
-            var scrollbars = document.createElement('div');
-            scrollbars.setAttribute('data-fluffy-scrollbars', '');
-
-            for (var i = 0; i < whichToCreate.length; i++) {
-                var scrollbar = document.createElement('span');
-                scrollbar.classList.add('is-' + whichToCreate[i]);
-
-                scrollbars.appendChild(scrollbar);
-                this.scrollbars[whichToCreate[i]] = scrollbar;
-            }
-
-            this.container.appendChild(scrollbars);
-            this.container.classList.add('has-scrollbar');
-        };
-
-        /**
-         * Returns the width of the container.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getContainerWidth = function getContainerWidth() {
-            return this.container.getBoundingClientRect().width;
-        };
-
-        /**
-         * Returns the height of the container.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getContainerHeight = function getContainerHeight() {
-            return this.container.getBoundingClientRect().height;
-        };
-
-        /**
-         * Returns the width of the trigger.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getTriggerWidth = function getTriggerWidth() {
-            return this.trigger.getBoundingClientRect().width;
-        };
-
-        /**
-         * Returns the height of the trigger.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getTriggerHeight = function getTriggerHeight() {
-            return this.trigger.getBoundingClientRect().height;
-        };
-
-        /**
-         * Returns the width of the scrollable content by summing up all item
-         * widths.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getContentWidth = function getContentWidth() {
-            for (var i = 0, contentWidth = 0; i < this.items.length; i++) {
-                contentWidth += this.items[i].getBoundingClientRect().width;
-            }
-
-            return contentWidth;
-        };
-
-        /**
-         * Returns the height of the scrollable content by summing up all item
-         * heights.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getContentHeight = function getContentHeight() {
-            for (var i = 0, contentHeight = 0; i < this.items.length; i++) {
-                contentHeight += this.items[i].getBoundingClientRect().height;
-            }
-
-            return contentHeight;
-        };
-
-        /**
-         * Returns the smart widths for a set of items in a Fluffy container.
-         * Smart hereby means the smallest, the average and the largest width.
-         *
-         * @public
-         * @return {Object}
-         */
-        this.getSmartWidth = function getSmartWidth() {
-            var widths = {
-                smallest: null,
-                largest: 0,
-                average: 0
-            };
-
-            for (var i = 0; i < this.items.length; i++) {
-                var width = 'naturalWidth' in this.items[i] ? this.items[i].naturalWidth : this.items[i].getBoundingClientRect().width;
-
-                widths.average += width;
-
-                if (width > widths.largest) {
-                    widths.largest = width;
-                }
-
-                if (widths.smallest === null || width < widths.smallest) {
-                    widths.smallest = width;
-                }
-            }
-
-            // get average width
-            widths.average /= this.items.length;
-
-            return widths;
-        };
-
-        /**
-         * Returns the smart heights for a set of items in a Fluffy container.
-         * Smart hereby means the smallest, the average and the largest height.
-         *
-         * @public
-         * @return {Object}
-         */
-        this.getSmartHeight = function getSmartHeight() {
-            var heights = {
-                smallest: null,
-                largest: 0,
-                average: 0
-            };
-
-            for (var i = 0; i < this.items.length; i++) {
-                var height = 'naturalHeight' in this.items[i] ? this.items[i].naturalHeight : this.items[i].getBoundingClientRect().height;
-
-                heights.average += height;
-
-                if (height > heights.largest) {
-                    heights.largest = height;
-                }
-
-                if (heights.smallest === null || height < heights.smallest) {
-                    heights.smallest = height;
-                }
-            }
-
-            // get average height
-            heights.average /= this.items.length;
-
-            return heights;
-        };
-
-        /**
-         * Returns the total scrollable height.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getScrollableHeight = function getScrollableHeight() {
-            return this.getContentHeight() - this.getContainerHeight();
-        };
-
-        /**
-         * Returns the total scrollable width.
-         *
-         * @public
-         * @return {Number} In pixels.
-         */
-        this.getScrollableWidth = function getScrollableWidth() {
-            return this.getContentWidth() - this.getContainerWidth();
-        };
-
-        /**
-         * Returns the mouse position in pixels as an array within the trigger
-         * area.
-         *
-         * @public
-         * @param {Object} e Mouse moving event.
-         * @return {Array} An array holding the x, y position of the mouse.
-         */
-        this.getMousePosition = function getMousePosition(e) {
-            /**
-             * normalizing the offsetX, offsetY. thanks jack moore!
-             * @see http://www.jacklmoore.com/notes/mouse-position/
-             */
-            e = e || window.event;
-
-            var style = this.trigger.currentStyle || window.getComputedStyle(this.trigger, null);
-
-            var rect = this.trigger.getBoundingClientRect();
-
-            // trigger element borders
-            var border = {
-                left: style.borderLeftWidth | 0,
-                right: style.borderRightWidth | 0,
-                top: style.borderTopWidth | 0,
-                bottom: style.borderBottomWidth | 0
-            };
-
-            // the border width and offset needs to be subtracted from the
-            // mouse position
-            var gap = {
-                left: rect.left + border.left,
-                right: border.left + border.right,
-                bottom: border.top + border.bottom,
-                top: rect.top + border.top
-            };
-
-            // retrieve value between 0 > value <= rect.{width,height}
-            return {
-                x: Math.min(Math.max(0, e.clientX - gap.left), rect.width - gap.right),
-                y: Math.min(Math.max(0, e.clientY - gap.top), rect.height - gap.bottom)
-            };
-        };
-
-        /**
-         * Returns the fake mouse position which is adjusted to the padding set
-         * and mapped to the content position.
-         *
-         * @public
-         * @return {Array} An array holding the x, y position of the mouse.
-         */
-        this.getFakeMousePosition = function getFakeMousePosition() {
-
-            // retrieve value between 0 > value <= rect.{width,height}
-            return {
-                x: Math.min(Math.max(0, this.mouse.real.x - this.settings.mousePadding), this.sizes.moveArea.width) * this.ratios.moveAreaToContent.width,
-                y: Math.min(Math.max(0, this.mouse.real.y - this.settings.mousePadding), this.sizes.moveArea.height) * this.ratios.moveAreaToContent.height
-            };
-        };
-
-        /**
-         * Caches all sizes for several elements that are used in calculations.
-         *
-         * @public
-         */
-        this.cacheSizes = function cacheSizes() {
-            /**
-             * That's kind of a map for all sizes of all relevant DOM elements.
-             *
-             * @type {Object}
-             */
-            this.sizes = {
-                container: {
-                    width: this.getContainerWidth(),
-                    height: this.getContainerHeight()
-                },
-                content: {
-                    width: this.getContentWidth(),
-                    height: this.getContentHeight()
-                },
-                scrollable: {
-                    width: this.getScrollableWidth(),
-                    height: this.getScrollableHeight()
-                },
-                trigger: {
-                    width: this.getTriggerWidth(),
-                    height: this.getTriggerHeight()
-                },
-                moveArea: {
-                    width: this.getTriggerWidth() - this.settings.mousePadding * 2,
-                    height: this.getTriggerHeight() - this.settings.mousePadding * 2
-                },
-                scrollbars: {
-                    horizontal: this.settings.showScrollbars && this.scrollbars.horizontal ? this.scrollbars.horizontal.getBoundingClientRect() : null,
-                    vertical: this.settings.showScrollbars && this.scrollbars.vertical ? this.scrollbars.vertical.getBoundingClientRect() : null
-                }
-            };
-        };
-
-        /**
-         * Updates the size of the content element according the the calculated
-         * width and height.
-         *
-         * @public
-         */
-        this.updateContentSize = function updateContentSize() {
-
-            // any smart sizes requested?
-            if (this.settings.smartWidth && smartSize.indexOf(this.settings.smartWidth) >= 0) {
-                this.content.style.width = this.getSmartWidth()[this.settings.smartWidth] + 'px';
-            }
-
-            if (this.settings.smartHeight && smartSize.indexOf(this.settings.smartHeight) >= 0) {
-                this.content.style.height = this.getSmartHeight()[this.settings.smartHeight] + 'px';
-            }
-
-            // cache all sizes
-            this.cacheSizes();
-
-            // run important calculations
-            this.defineRatios();
-
-            if (this.settings.triggerDirection.indexOf('x') >= 0) {
-                this.content.style.width = (this.ratios.containerToContent.width * 100 + 0.001).toFixed(maxDecimalPlaces) + '%';
-            }
-
-            if (this.settings.triggerDirection.indexOf('y') >= 0) {
-                this.content.style.height = (this.ratios.containerToContent.height * 100 + 0.001).toFixed(maxDecimalPlaces) + '%';
-            }
-
-            // check if mouse position needs to be adjusted
-            if (screenSize.x !== window.innerWidth || screenSize.y !== window.innerHeight) {
-                this.mouse.real = {
-                    x: this.mouse.real.x * (window.innerWidth / screenSize.x),
-                    y: this.mouse.real.y * (window.innerHeight / screenSize.y)
-                };
-
-                screenSize = {
-                    x: window.innerWidth,
-                    y: window.innerHeight
-                };
-
-                this.mouse.fake = this.getFakeMousePosition();
-            }
-        };
-
-        /**
-         * Scrolls the content to the given position according to the trigger
-         * dimension set.
-         *
-         * @public
-         */
-        this.updateContentPosition = function updateContentPosition() {
-
-            // by default
-            var x = 0,
-                y = 0;
-
-            if (this.settings.triggerDirection.indexOf('x') >= 0) {
-                x = (this.mouse.last.x / this.sizes.scrollable.width * this.ratios.contentToScrollableArea.width * 100).toFixed(maxDecimalPlaces);
-            }
-
-            if (this.settings.triggerDirection.indexOf('y') >= 0) {
-                y = (this.mouse.last.y / this.sizes.scrollable.height * this.ratios.contentToScrollableArea.height * 100).toFixed(maxDecimalPlaces);
-            }
-
-            this.content.style[shiftProperty] = 'translate(-' + x + '%, -' + y + '%)';
-        };
-
-        /**
-         * Updates the position of the scrollbar relative to the current
-         * scrolled position within the content area.
-         *
-         * @public
-         */
-        this.updateScrollbarPosition = function updateScrollbarPosition() {
-
-            if (!this.settings.showScrollbars) {
-                return;
-            }
-
-            if (this.settings.triggerDirection.indexOf('x') >= 0) {
-                this.scrollbars.horizontal.style.left = (this.mouse.last.x / this.sizes.scrollable.width * this.ratios.containerToScrollbarArea.width * 100).toFixed(maxDecimalPlaces) + '%';
-            }
-
-            if (this.settings.triggerDirection.indexOf('y') >= 0) {
-                this.scrollbars.vertical.style.top = (this.mouse.last.y / this.sizes.scrollable.height * this.ratios.containerToScrollbarArea.height * 100).toFixed(maxDecimalPlaces) + '%';
-            }
-        };
-
-        /**
-         * Define several ratios needed for proper calculations.
-         *
-         * @public
-         */
-        this.defineRatios = function defineRatios() {
-
-            // moving area to scrollable area
-            this.ratios.moveAreaToContent = {
-                width: this.sizes.scrollable.width / this.sizes.moveArea.width,
-                height: this.sizes.scrollable.height / this.sizes.moveArea.height
-            };
-
-            // content to scrollable area
-            this.ratios.contentToScrollableArea = {
-                width: this.sizes.scrollable.width / this.sizes.content.width,
-                height: this.sizes.scrollable.height / this.sizes.content.height
-            };
-
-            // container to content
-            this.ratios.containerToContent = {
-                width: this.sizes.content.width / this.sizes.container.width,
-                height: this.sizes.content.height / this.sizes.container.height
-            };
-
-            // scrollbar to container
-            this.ratios.containerToScrollbarArea = {
-                width: this.sizes.scrollbars.horizontal ? (this.sizes.container.width - this.sizes.scrollbars.horizontal.width) / this.sizes.container.width : 0,
-                height: this.sizes.scrollbars.vertical ? (this.sizes.container.height - this.sizes.scrollbars.vertical.height) / this.sizes.container.height : 0
-            };
-        };
-
-        /**
-         * Registers all listeners needed in order to track mouse positioning,
-         * window resizing and scrolling calculations.
-         *
-         * @public
-         */
-        this.registerEventListeners = function registerEventListeners() {
-
-            // Fluffy is ready
-            if (this.container) {
-                this.container.classList.add('is-ready');
-            }
-
-            // update content sizes
-            this.updateContentSize();
-
-            // stop right here if touch device!
-            if (isTouch) {
-                return;
-            }
-
-            this.trigger.addEventListener('mousemove', function onMouseMove(e) {
-
-                // start mouse observer if not already started
-                if (this.mouse.observer.status() === false) {
-                    this.mouse.observer.start();
-                }
-
-                // get real mouse position in trigger area
-                this.mouse.real = this.getMousePosition(e);
-
-                // get fake mouse position (adjusted to set padding, mapped
-                // to content position)
-                this.mouse.fake = this.getFakeMousePosition();
-            }.bind(this));
-        };
-
-        /**
-         * That's the closure that is handling all the constructor logic and
-         * builds up all available properties.
-         */
-        (function construct() {
-            var contentNode = containerNode.querySelector('[data-fluffy-content]');
-
-            // container has no content, that's not good!
-            if (contentNode === null) {
-                _(containerNode, 'warn');
-                _('↳ Has no [data-fluffy-content] element and therefore will be ignored.', 'warn');
-                return;
-            }
-
-            // prepare settings for this object
-            var settings = {};
-
-            // custom settings provided
-            if (containerNode.hasAttribute('data-fluffy-options')) {
-
-                // try to read the custom settings
-                try {
-                    var options = JSON.parse(containerNode.getAttribute('data-fluffy-options'));
-
-                    // parsed options are in a wrong format
-                    if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) !== 'object') {
-                        _(containerNode, 'warn');
-                        _('↳ Fluffy options need to be of type object. Skipping for container above. Using defaults instead.', 'warn');
-
-                        // use given options
-                    } else {
-                        settings = options;
-                    }
-                } catch (e) {
-                    _(containerNode, 'warn');
-                    _('↳ Trying to parse options for container above has failed. Using defaults instead.', 'warn');
-                }
-
-                // integrity checks for several options
-                if ('mousePadding' in settings && settings.mousePadding < 0) {
-                    settings.mousePadding = defaults.mousePadding;
-                }
-
-                if ('mouseDamp' in settings && settings.mouseDamp <= 0) {
-                    settings.mouseDamp = defaults.mouseDamp;
-                }
-            }
-
-            // fill up missing settings with its default values
-            for (var key in defaults) {
-                if (!(key in settings)) {
-                    settings[key] = defaults[key];
-                }
-            }
-
-            // fill properties
-            this.container = containerNode;
-            this.content = contentNode;
-            this.items = contentNode.childNodes;
-            this.settings = settings;
-            this.trigger = containerNode;
-
-            if (settings.triggerSelector) {
-                var triggerNode = document.querySelector(settings.triggerSelector);
-
-                if (triggerNode !== null) {
-                    this.trigger = triggerNode;
-                }
-            }
-
-            // time for last preparations
-            this.prepare();
-
-            // register final event listeners when document has been loaded
-            switch (document.readyState) {
-                case 'loading':
-                case 'interactive':
-                    document.onreadystatechange = function onReadyStateChange() {
-                        if (document.readyState == 'complete') {
-                            this.registerEventListeners();
-                        }
-                    }.bind(this);
-                    break;
-                case 'complete':
-                    this.registerEventListeners();
-                    break;
-            }
-        }).call(this);
-    };
-
-    /**
-     * The MouseObserver is an object which provides functionality to start,
-     * stop and get the current status of the observer. The observer itself is
-     * an interval in where several calculations regarding the mouse are
-     * happening and other parts are getting updated.
-     *
-     * @param {Object} fluffyObject A Fluffy object.
-     */
-    function MouseObserver(fluffyObject) {
-        if (fluffyObject instanceof FluffyObject === false) {
-            throw Error('MouseObserver expects first parameter to be an instance of FluffyObject. Instead ' + fluffyObject.constructor.name + ' was given.');
-        }
-
-        /**
-         * Behaves the same as setInterval except uses requestAnimationFrame()
-         * where possible for better performance.
-         *
-         * @private
-         * @param {function} fn The callback function.
-         * @param {int} delay The delay in milliseconds.
-         */
-        function _requestInterval(fn, delay) {
-            var start = Date.now();
-            var handle = {};
-
-            function loop() {
-                handle.value = window.requestAnimationFrame(loop);
-
-                var current = Date.now();
-                var delta = current - start;
-
-                if (delta >= delay) {
-                    fn.call();
-                    start = Date.now();
-                }
-            }
-
-            handle.value = window.requestAnimationFrame(loop);
-
-            return handle;
-        }
-
-        /**
-         * Behaves the same as clearInterval except uses
-         * cancelRequestAnimationFrame() where possible for better performance.
-         *
-         * @private
-         * @param {int|object} fn The callback function.
-         */
-        function _clearInterval(handle) {
-            window.cancelAnimationFrame(handle.value);
-        }
-
-        /**
-         * Starts the interval which runs last calculations on the mouse
-         * position and updates other relevant parts of Fluffy.
-         */
-        this.start = function start() {
-
-            // add modifier to container that it's moving
-            fluffyObject.container.classList.add('is-moving');
-
-            this.id = _requestInterval(function () {
-
-                // make mouse move triggering more lazy
-                var add = {
-                    x: (fluffyObject.mouse.fake.x - fluffyObject.mouse.last.x) / fluffyObject.settings.mouseDamp,
-                    y: (fluffyObject.mouse.fake.y - fluffyObject.mouse.last.y) / fluffyObject.settings.mouseDamp
-                };
-
-                // stop observing as no movement is going on
-                if (Math.abs(add.x) < 0.001 && Math.abs(add.y) < 0.001) {
-
-                    // stop observing
-                    this.stop();
-
-                    // remove modifier
-                    fluffyObject.container.classList.remove('is-moving');
-                }
-
-                // update last mouse position
-                fluffyObject.mouse.last.x += add.x;
-                fluffyObject.mouse.last.y += add.y;
-
-                // scroll content to last position
-                fluffyObject.updateContentPosition();
-
-                // update scrollbar positions
-                fluffyObject.updateScrollbarPosition();
-            }.bind(this), 10);
-        };
-
-        /**
-         * Stops the interval and clears any status set.
-         */
-        this.stop = function stop() {
-            this.id = _clearInterval(this.id);
-        };
-
-        /**
-         * Returns a boolean value indicating whether the observer is running
-         * or not.
-         *
-         * @return {Boolean}
-         */
-        this.status = function status() {
-            return _typeof(this.id) === 'object';
-        };
-    };
-
-    /**
-     * Creates a Fluffy instance.
-     *
-     * @param {string|HTMLElement} reference
-     */
-    function create(reference) {
-        var container = reference;
-
-        if (typeof reference === 'string') {
-            container = document.querySelector(reference);
-        }
-
-        // quit early if nothing found
-        if (container === null) {
-            return;
-        }
-
-        // check if there is already a Fluffy object with the given container
-        for (var i = 0; i < fluffyObjects.length; i++) {
-            if (fluffyObjects[i].container === container) {
-                return;
-            }
-        }
-
-        fluffyObjects.push(new FluffyObject(container));
-    };
-
-    /**
-     * Automatically detects any Fluffy markup and creates according instances.
-     */
-    function detect() {
-
-        // get all defined containers
-        var containers = document.querySelectorAll('[data-fluffy-container]');
-
-        // quit early if nothing found
-        if (containers.length === 0) {
-            return;
-        }
-
-        // fill our stack
-        for (var i = 0; i < containers.length; i++) {
-            create(containers[i]);
-        }
-    };
-
-    /**
-     * Build and check lifetime relevant things.
-     */
-    (function construct() {
-
-        // lacking features?
-        if (!featureSupport) {
-            throw Error('Browser is lacking support for several requirements like: \'querySelector\', \'addEventListener\' or \'requestAnimationFrame\'.');
-        }
-
-        // since we're using CSS transforming to simulate the scrolling we need
-        // to get the supported (vendor prefixed) CSS property for it
-        shiftProperty = function getShiftProperty(prefixes) {
-            var tmp = document.createElement('div');
-
-            for (var i = 0; i < prefixes.length; i++) {
-                if (prefixes[i] in tmp.style) {
-                    return prefixes[i];
-                }
-            }
-
-            throw Error('Browser doesn\'t support CSS3 transforms.');
-        }(['transform', 'msTransform', 'MozTransform', 'WebkitTransform', 'OTransform']);
-
-        // add global touch state modifier
-        if (isTouch) {
-            document.documentElement.classList.add('is-touch');
-        }
-
-        _registerResizeListener();
-    })();
-
-    return {
-        create: create,
-        detect: detect,
-        version: version
-    };
+      });var s = t.createElement('div');return c(s, 'columns', 0), l.filter(function (e) {
+        return !!e;
+      }).forEach(function (e) {
+        s.appendChild(e);
+      }), s;
+    }, r.recreateColumns = function (t) {
+      e.requestAnimationFrame(function () {
+        r.addColumns(t, r.removeColumns(t));var e = new CustomEvent('columnsChange');t.dispatchEvent(e);
+      });
+    }, r.mediaQueryChange = function (e) {
+      e.matches && Array.prototype.forEach.call(a, r.recreateColumns);
+    }, r.getCSSRules = function (e) {
+      var t;try {
+        t = e.sheet.cssRules || e.sheet.rules;
+      } catch (n) {
+        return [];
+      }return t || [];
+    }, r.getStylesheets = function () {
+      var e = Array.prototype.slice.call(t.querySelectorAll('style'));return e.forEach(function (t, n) {
+        'text/css' !== t.type && '' !== t.type && e.splice(n, 1);
+      }), Array.prototype.concat.call(e, Array.prototype.slice.call(t.querySelectorAll('link[rel=\'stylesheet\']')));
+    }, r.mediaRuleHasColumnsSelector = function (e) {
+      var t, n;try {
+        t = e.length;
+      } catch (r) {
+        t = 0;
+      }for (; t--;) {
+        if (n = e[t], n.selectorText && n.selectorText.match(/\[data-columns\](.*)::?before$/)) return !0;
+      }return !1;
+    }, r.scanMediaQueries = function () {
+      var t = [];if (e.matchMedia) {
+        r.getStylesheets().forEach(function (e) {
+          Array.prototype.forEach.call(r.getCSSRules(e), function (e) {
+            try {
+              e.media && e.cssRules && r.mediaRuleHasColumnsSelector(e.cssRules) && t.push(e);
+            } catch (n) {}
+          });
+        });var n = i.filter(function (e) {
+          return -1 === t.indexOf(e);
+        });o.filter(function (e) {
+          return -1 !== n.indexOf(e.rule);
+        }).forEach(function (e) {
+          e.mql.removeListener(r.mediaQueryChange);
+        }), o = o.filter(function (e) {
+          return -1 === n.indexOf(e.rule);
+        }), t.filter(function (e) {
+          return -1 == i.indexOf(e);
+        }).forEach(function (t) {
+          var n = e.matchMedia(t.media.mediaText);n.addListener(r.mediaQueryChange), o.push({ rule: t, mql: n });
+        }), i.length = 0, i = t;
+      }
+    }, r.rescanMediaQueries = function () {
+      r.scanMediaQueries(), Array.prototype.forEach.call(a, r.recreateColumns);
+    }, r.nextElementColumnIndex = function (e, t) {
+      var n,
+          r,
+          a,
+          i = e.children,
+          o = i.length,
+          c = 0,
+          l = 0;for (a = 0; o > a; a++) {
+        n = i[a], r = n.children.length + (t[a].children || t[a].childNodes).length, 0 === c && (c = r), c > r && (l = a, c = r);
+      }return l;
+    }, r.createFragmentsList = function (e) {
+      for (var n = new Array(e), r = 0; r !== e;) {
+        n[r] = t.createDocumentFragment(), r++;
+      }return n;
+    }, r.appendElements = function (e, t) {
+      var n = e.children,
+          a = n.length,
+          i = r.createFragmentsList(a);Array.prototype.forEach.call(t, function (t) {
+        var n = r.nextElementColumnIndex(e, i);i[n].appendChild(t);
+      }), Array.prototype.forEach.call(n, function (e, t) {
+        e.appendChild(i[t]);
+      });
+    }, r.prependElements = function (e, n) {
+      var a = e.children,
+          i = a.length,
+          o = r.createFragmentsList(i),
+          c = i - 1;n.forEach(function (e) {
+        var t = o[c];t.insertBefore(e, t.firstChild), 0 === c ? c = i - 1 : c--;
+      }), Array.prototype.forEach.call(a, function (e, t) {
+        e.insertBefore(o[t], e.firstChild);
+      });for (var l = t.createDocumentFragment(), s = n.length % i; 0 !== s--;) {
+        l.appendChild(e.lastChild);
+      }e.insertBefore(l, e.firstChild);
+    }, r.registerGrid = function (n) {
+      if ('none' !== e.getComputedStyle(n).display) {
+        var i = t.createRange();i.selectNodeContents(n);var o = t.createElement('div');o.appendChild(i.extractContents()), c(o, 'columns', 0), r.addColumns(n, o), a.push(n);
+      }
+    }, r.init = function () {
+      var e = t.createElement('style');e.innerHTML = '[data-columns]::before{display:block;visibility:hidden;position:absolute;font-size:1px;}', t.head.appendChild(e);var n = t.querySelectorAll('[data-columns]');Array.prototype.forEach.call(n, r.registerGrid), r.scanMediaQueries();
+    }, r.init(), { appendElements: r.appendElements, prependElements: r.prependElements, registerGrid: r.registerGrid, recreateColumns: r.recreateColumns, rescanMediaQueries: r.rescanMediaQueries, init: r.init, append_elements: r.appendElements, prepend_elements: r.prependElements, register_grid: r.registerGrid, recreate_columns: r.recreateColumns, rescan_media_queries: r.rescanMediaQueries };
+  }(window, window.document);return e;
 });
+//# sourceMappingURL=masonry.js.map
 'use strict';
 
 /* http://prismjs.com/download.html?themes=prism-okaidia&languages=clike+c+cpp&plugins=line-numbers+toolbar+copy-to-clipboard */
@@ -1302,24 +571,6 @@ $(function () {
 'use strict';
 
 $(function () {
-	if (window.innerWidth >= 600) {
-		$(document).on('mousemove', '.modal', function (event) {
-			var halfW = this.clientWidth / 2;
-			var halfH = this.clientHeight / 2;
-			var coorX = halfW - (event.screenX - this.offsetLeft);
-			var coorY = halfH - (event.screenY - this.offsetTop);
-			var degX = coorY / halfH * 2 + 'deg';
-			var degY = coorX / halfW * -2 + 'deg';
-
-			$(this).css('transform', function () {
-				return 'perspective(600px) translate3d(0, -2px, 0) scale(1.1) rotateX(' + degX + ') rotateY(' + degY + ')';
-			});
-		});
-	}
-});
-'use strict';
-
-$(function () {
   var introTop = $('#intro').position().top;
   var introMid = introTop + $('#intro').height() / 2;
   var introBottom = introTop + $('#intro').height();
@@ -1353,6 +604,11 @@ $(function () {
     setTimeout(function () {
       $('div.navbar-fixed').css('opacity', '0.95');
     }, 2000);
+
+    $('.materialboxed').materialbox();
+
+    window.sr = ScrollReveal();
+    sr.reveal('#web .col');
   };
 
   /*** NAV LINKS ***/
