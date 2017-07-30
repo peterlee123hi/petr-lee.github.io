@@ -650,7 +650,17 @@ $(function () {
       }
     });
 
-    var options = [{ selector: '#sherlock-video',
+    var options = [{ selector: '#microsoft-video',
+      offset: 100,
+      callback: function callback() {
+        $('#microsoft-video').addClass('animated fadeInLeft');
+      }
+    }, { selector: '#microsoft-desc',
+      offset: 100,
+      callback: function callback() {
+        $('#microsoft-desc').addClass('animated fadeInRight');
+      }
+    }, { selector: '#sherlock-video',
       offset: 100,
       callback: function callback() {
         $('#sherlock-video').addClass('animated fadeInLeft');
@@ -704,7 +714,7 @@ $(function () {
 
       'csm': {
         'title': 'Computer Science Mentors',
-        'desc': 'After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. Leading a group of students was fulfilling for me knowing that I could be a role model for others.',
+        'desc': 'After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. Teaching others is fulfilling for me because I believe that knowledge is always accessible and being able to help other students become passionate about a topic is fulfilling for me. I\'ve always felt that teaching is natural for me because of my detail-oriented nature.',
         'link': 'http://csmberkeley.github.io/#/'
       },
 
@@ -724,6 +734,12 @@ $(function () {
         'title': 'Web Lab',
         'desc': 'As a project leader, I also had my team of developers create a web lab to showcase live online demos of mini-projects.',
         'link': 'https://lab.callaunchpad.org/'
+      },
+
+      'fzcf': {
+        'title': 'FZ Cultural Foundation',
+        'desc': 'This was my first web project during freshman year for a nonprofit organization located in Texas.',
+        'link': 'http://fzculturalfoundation.org/'
       }
     };
 
@@ -764,6 +780,10 @@ $(function () {
 
     $('.lab-btn').hover(function () {
       changeWebModal('lab');
+    });
+
+    $('.fzcf-btn').hover(function () {
+      changeWebModal('fzcf');
     });
   };
 
