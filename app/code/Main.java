@@ -12,11 +12,11 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 	}
 
-	public static void solve() {
+	public static void output() {
 
 	}
 
-	public static void output() {
+	public static void solve() {
 
 	}
 }

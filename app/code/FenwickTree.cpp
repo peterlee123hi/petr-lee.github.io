@@ -1,9 +1,9 @@
 #include <vector>
+#define sz(x) ((int)(x).size())
+#define rep(i,a,n) for(int i=a;i<n;i++)
+#define LSOne(S) (S&-S)
 using namespace std;
 typedef vector<int> vi;
-#define SZ(x) ((int)(x).size())
-#define REP(i,a,n) for(int i=a;i<n;i++)
-#define LSOne(S) (S&-S)
 
 class FenwickTree {
 private: vi ft;
@@ -26,7 +26,7 @@ public:
 	}
 
 	void adjust(int k, int v) {
-		while(k < SZ(ft)) {
+		while(k < sz(ft)) {
 			ft[k] += v;
 			k += LSOne(k);
 		}
