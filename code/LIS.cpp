@@ -1,38 +1,31 @@
-#include <cstdio>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-#define REP(i,a,n) for(int i=a;i<n;i++)
- 
-/**
- * INPUT DESCRIPTION:
- * The input contains the sequence only.
- */
+#define rep(i,a,n) for(int i=a;i<n;i++)
+#define all(x) (x).begin(),(x).end()
+const int inf = 1 << 29;
+typedef vector<int> vi;
 
-int A[1000000], M[1000000], M_id[1000000], P[1000000];
- 
-void print(int end) {
-    if(end < 0) return;
-    print(P[end]);
-    printf("%d ", A[end]);
-}
- 
+const int N = 1e7;
+
+int n, a[N];
+
 int main() {
-    int L = 0, L_end = 0, i = 0;
-
-    while(scanf("%d", &A[i]) != EOF) {
-        int pos = lower_bound(M, M + L, A[i]) - M;
-        M[pos] = A[i];
-        M_id[pos] = i;
-        P[i] = pos > 0 ? M_id[pos - 1] : -1;
-        if(pos == L) {
-            L++;
-            L_end = i;
-        }
-        i++;
+    cin >> n;
+    rep(i, 0, n) cin >> a[i];
+    
+    vi d(n + 1, 0);
+    d[0] = -inf;
+    rep(i, 1, n + 1) d[i] = inf;
+    
+    rep(i, 0, n) {
+        int j = upper_bound(all(d), a[i]) - d.begin();
+        if (d[j - 1] < a[i] && a[i] < d[j]) d[j] = a[i];
     }
-
-    printf("%d\n", L);
-    print(L_end);
-    printf("\n");
-    exit(0);
+    
+    int i = n;
+    while (d[i] == inf) i--;
+    
+    cout << i << endl;
+    return 0;
 }
+

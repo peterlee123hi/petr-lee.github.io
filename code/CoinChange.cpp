@@ -1,45 +1,44 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 #define rep(i,a,n) for(int i=a;i<n;i++)
-const int INF = 1<<29;
+typedef long long ll;
 
 /**
  * INPUT DESCRIPTION:
  * The first line contains:
- * 1. V = amount needed to make change
- * 2. n = # of denominations
+ * 1. n = amount needed for change
+ * 2. m = number of denominations
  * 
  * The next line contains the list of denominations.
  */
 
-int memo[1000];
+const int N = 300, M = 100;
 
-int V, n, denomination[100];
-
-int change(int value) {
-	if(value == 0) return 0;
-	if(value < 0) return INF;
-
-	if(memo[value] != -1)
-		return memo[value];
-	int &m = memo[value];
-
-	int ans = INF;
-	rep(i, 0, n)
-		ans = min(ans, change(value-denomination[i]));
-	ans++;
-
-	return m = ans;
-}
+int n, m, c[N];
 
 int main() {
-	scanf("%d %d", &V, &n);
-	rep(i, 0, n) scanf("%d", &denomination[i]);
-
-	memset(memo, -1, sizeof memo);
-
-	printf("Minimum # of coins: %d\n", change(V));
-	exit(0);
+    cin >> n >> m;
+    rep(i, 0, m) cin >> c[i];
+    
+    ll dp[N][M];
+    rep(i, 0, n + 1) {
+        rep(j, 0, m + 1) {
+            if (i == 0)
+                dp[i][j] = 1;
+            else if (j == 0)
+                dp[i][j] = 0;
+            else {
+                ll a = 0, b = 0;
+                if (c[j - 1] <= i)
+                    a = dp[i - c[j - 1]][j];
+                if (j >= 1)
+                    b = dp[i][j - 1];
+                dp[i][j] = a + b;
+            }
+        }
+    }
+    
+    cout << dp[n][m] << endl;
+    return 0;
 }
+

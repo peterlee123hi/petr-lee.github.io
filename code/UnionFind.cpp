@@ -1,7 +1,7 @@
 #include <vector>
+#define rep(i,a,n) for(int i=a;i<n;i++)
 using namespace std;
 typedef vector<int> vi;
-#define REP(i,a,n) for(int i=a;i<n;i++)
 
 class UnionFind {
 private: vi p, rank;
@@ -9,7 +9,7 @@ public:
 	UnionFind(int n) {
 		rank.assign(n,0);
 		p.assign(n,0);
-		REP(i,0,n) p[i] = i;
+		rep(i,0,n) p[i] = i;
 	}
 
 	int findSet(int i) {

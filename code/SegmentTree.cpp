@@ -1,7 +1,7 @@
 #include <vector>
 using namespace std;
+#define sz(x) ((int)(x).size())
 typedef vector<int> vi;
-#define SZ(x) ((int)(x).size())
 
 class SegmentTree {
 private:
@@ -40,7 +40,7 @@ private:
 public:
 	SegmentTree(const vi &_A) {
 		A = _A;
-		n = SZ(A);
+		n = sz(A);
 		st.assign(4 * n, 0);
 		build(1, 0, n - 1);
 	}

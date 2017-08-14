@@ -1,8 +1,8 @@
 #include <cstdio>
 #include <algorithm>
-#include <climits>
 using namespace std;
-#define REP(i,a,n) for(int i=a;i<n;i++)
+#define rep(i,a,n) for(int i=a;i<n;i++)
+const int INF = 1 << 29;
 
 /**
  * INPUT DESCRIPTION:
@@ -18,16 +18,16 @@ int main() {
 	scanf("%d %d", &n, &m);
 	int mat[n][m];
 
-	REP(i, 0, n) REP(j, 0, m) {
+	rep(i, 0, n) rep(j, 0, m) {
 		scanf("%d", &mat[i][j]);
 		if(i > 0) mat[i][j] += mat[i-1][j];
 		if(j > 0) mat[i][j] += mat[i][j-1];
 		if(i > 0 && j > 0) mat[i][j] -= mat[i-1][j-1];
 	}
 
-	int ans = INT_MIN;
-	REP(sx, 0, n) REP(sy, 0, m) {
-		REP(ex, sx, n) REP(ey, sy, m) {
+	int ans = -INF;
+	rep(sx, 0, n) rep(sy, 0, m) {
+		rep(ex, sx, n) rep(ey, sy, m) {
 			int subrect = mat[ex][ey];
 			if(sx > 0) subrect -= mat[sx-1][ey];
 			if(sy > 0) subrect -= mat[ex][sy-1];
@@ -37,5 +37,5 @@ int main() {
 	}
 
 	printf("%d\n", ans);
-	exit(0);
+    return 0;
 }
