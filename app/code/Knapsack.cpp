@@ -1,6 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 #define rep(i,a,n) for(int i=a;i<n;i++)
 
@@ -8,39 +6,34 @@ using namespace std;
  * INPUT DESCRIPTION:
  * The first line contains:
  * 1. n = # of items
+ * 2. k = max weight
  * 
  * The next n lines each contain:
- * 1. v = value of item
  * 2. w = weight of item
- * 
- * The last line contains:
- * 1. s = max weight
+ * 1. v = value of item
  */
 
-int memo[1000][100];
-int n, V[1000], W[1000], s;
+const int N = 1000, K = 1000;
 
-int backtrack(int id, int remW) {
-	if(id == n || remW == 0) return 0;
-
-	if(memo[id][remW] != -1) return memo[id][remW];
-	int &m = memo[id][remW];
-
-	if(W[id] > remW) return m = backtrack(id+1, remW);
-	int take = V[id]+backtrack(id+1, remW-W[id]);
-	int ignore = backtrack(id+1, remW);
-	return m = max(take, ignore);
-}
+int n, k;
+int wt[N], val[N];
 
 int main() {
-	scanf("%d", &n);
-	rep(i, 0, n) {
-		scanf("%d %d", &V[i], &W[i]);
-	}
-	scanf("%d", &s);
+    cin >> n >> k;
+    rep(i, 0, n) cin >> wt[i] >> val[i];
 
-	memset(memo, -1, sizeof memo);
+    int dp[N + 1][K + 1];
+    rep(i, 0, n + 1) {
+        rep(w, 0, k + 1) {
+            if (i == 0 || w == 0) 
+                dp[i][w] = 0;
+            else if (wt[i - 1] <= w)
+                dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i - 1][w]);
+            else
+                dp[i][w] = dp[i-1][w];
+        }
+    }
 
-	printf("%d\n", backtrack(0, s));
-	exit(0);
+    cout << dp[n][k] << endl;
+    return 0;
 }
