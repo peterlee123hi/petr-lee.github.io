@@ -1,5 +1,5 @@
 $(function() {
-  var base = 'https://raw.githubusercontent.com/petr-lee/petr-lee.github.io/master/code/';
+  var base = 'https://raw.githubusercontent.com/petr-lee/CompetitiveProgrammingAlgorithms/master/';
   var editor = $('#editor');
 
   $.get(base + 'main_lite.cpp', function(data) {
