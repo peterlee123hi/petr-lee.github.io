@@ -1,39 +1,9 @@
 #theory {
 	text-align: center;
-	padding-bottom: 0;
-	margin-top: 4em;
-
-	h1 {
-		letter-spacing: -0.05rem;
-		font-weight: 300;
-		margin-bottom: 0;
-	}
-
-	@media #{$small-and-down} {
-		h1 {
-			font-size: 3rem;
-		}
-
-		h4 {
-			font-size: 1.6rem;
-		}
-	}
-
-	h4 {
-		margin-top: 0.4em;
-		font-size: 1.8rem;
-		font-weight: 700;
-		color: color('grey', 'darken-3');
-	}
-
+	padding-bottom: 2em;
 	a.dropdown-button {
 		margin: 0.4em;
 		text-transform: none;
 		font-weight: 700;
-	}
-
-	ul li a {
-		color: color('blue', 'base');
-		text-transform: none;
 	}
 }
