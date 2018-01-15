@@ -6,7 +6,7 @@
 		line-height: 25px;
 		position: relative;
 		text-align: center;
-        height: 320px;
+        height: 16em;
 
 		.sc-img {
 			font-size: 0;
@@ -68,6 +68,12 @@
 		}
 	}
 
+	@media #{$small-and-down} {
+		.sc {
+			height: 320px;
+		}
+	}
+
 	.sc:hover {
 		cursor: pointer;
 
@@ -86,7 +92,7 @@
 		content: "Learn more.";
 		color: color('grey', 'darken-2');
 		position: absolute;
-		top: calc(50% - 60px);
+		top: calc(50% - 80px);
 		left: calc(50% - 70px);
 		right: inherit;
 		background: #fff;

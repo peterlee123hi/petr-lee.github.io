@@ -16,7 +16,7 @@ $(function() {
     });
 
     setTimeout(function() {
-      $('main div h1').addClass('animated fadeInUp');
+      $('main div h1').addClass('animated fadeInUp'); 
     }, 500);
     setTimeout(function() {
       $('main div h2').addClass('animated fadeInUp');
@@ -104,16 +104,16 @@ $(function() {
           $('#sherlock-desc').addClass('animated fadeInRight');
         }
       },
-      { selector: '#openark-preview', 
+      { selector: '#ai-video', 
         offset: 100, 
         callback: function() {
-          $('#openark-preview').addClass('animated fadeInLeft');
+          $('#ai-video').addClass('animated fadeInLeft');
         }
       }, 
-      { selector: '#openark-desc', 
+      { selector: '#ai-desc', 
         offset: 100, 
         callback: function() {
-          $('#openark-desc').addClass('animated fadeInRight');
+          $('#ai-desc').addClass('animated fadeInRight');
         }
       }
     ];
@@ -126,56 +126,38 @@ $(function() {
     var webInfo = {
       'unrac': {
         'title': 'United Nations Refugee Agency at Cal',
-        'desc': 'I was requested to make a website for this nonprofit that was dedicated to raising awareness for the refugee crisis in Syria. At the time, I was proficient at more advanced front-end frameworks including Angular, which is the major framework for the website.',
+        'desc': 'In my freshman year, I was asked to make a website for a local nonprofit that was dedicated to raising awareness for the refugee crisis in Syria.',
         'link': 'https://unrac.berkeley.edu/#/'
       },
 
       'boilerplate': {
         'title': 'Front-end Boilerplate',
-        'desc': 'After learning so many different frameworks and plugins for front-end, I decided to compile my own starter code pre-installed with mostly necessary, sometimes extra fancy features for future front-end projects. I also made boilerplates for Materialize and Material Kit PRO. Also note, there have been MAJOR revisions since I made the sample landing page, so the updated boilerplate is on a separate branch.',
+        'desc': 'After getting my PhD in Javascript, I compiled my own starter code pre-installed with mostly necessary, some extra fancy features for future front-end projects. Now days, I use Yeoman though...',
         'link': 'https://peterlee.tech/FrontendBoilerplate/'
-      },
-
-      'hackin': {
-        'title': 'Hack In',
-        'desc': 'At the European Innovation Academy, a 4-week extreme startup accelerator, I founded this tech startup along with a small team of software developers and business specialists. Hack In is a platform that facilitates the recruitment process of software developers through customizable and comprehensive software development assessments. Our platform uses Meteor as the web framework. To demo, a sample login is "sample@company.io" and the password is "12345678".',
-        'link': 'http://hackin.io/'
       },
 
       'alary': {
         'title': 'Alary Language',
         'desc': 'I was requested to make this website for an official club at UC Berkeley. Alary Language focuses on connecting students who are passionate about learning and teaching languages. The club provides a more personal language learning experience with companionship. This website was made in a single day.',
-        'link': 'http://alarylanguage.club/'
+        'link': 'https://peterlee.tech/AlaryLanguage'
       },
 
       'csm': {
         'title': 'Computer Science Mentors',
-        'desc': 'After becoming a member of CSM and visiting the official website, I was inspired to recreate it using a modern material theme. Teaching others is fulfilling for me because I believe that knowledge is always accessible and being able to help other students become passionate about a topic is fulfilling for me. I\'ve always felt that teaching is natural for me because of my detail-oriented nature.',
-        'link': 'http://csmberkeley.github.io/#/'
+        'desc': 'CSM is the largest student organization on campus that provides resources for aspiring computer science students. After becoming a member for a semester, I recreated the homepage using a modern material theme that became the official website!',
+        'link': 'https://csmentors.berkeley.edu'
       },
 
-      'launchpad': {
-        'title': 'Launchpad',
-        'desc': 'After attending a tech talk by the founders of Box, I was inspired to gather the most passionate and intelligent students at UC Berkeley to solve real-world problems with artificial intelligence, machine learning, and data science.',
-        'link': 'https://callaunchpad.org/#/'
+      'cp': {
+        'title': 'Competitive Programming',
+        'desc': 'In junior year, I competed in the ACM-ICPC Pacific NW Regional competition. I compiled a personal algorithm notebook for reference.',
+        'link': 'https://peterlee.tech/CPNotebook'
       },
 
-      'sherlock': {
-        'title': 'Project Sherlock',
-        'desc': 'My team project for Launchpad was Sherlock who is an artificial intelligence that recognizes different things live through webcams. Aside from Sherlock, we train convolutional neural networks for different computer vision tasks.',
-        'link': 'https://sherlock.callaunchpad.org/'
-      },
-
-      'lab': {
-        'title': 'Web Lab',
-        'desc': 'As a project leader, I also had my team of developers create a web lab to showcase live online demos of mini-projects.',
-        'link': 'https://lab.callaunchpad.org/'
-      },
-
-      'fzcf': {
-        'title': 'FZ Cultural Foundation',
-        'desc': 'This was my first web project during freshman year for a nonprofit organization located in Texas.',
-        'link': 'http://fzculturalfoundation.org/'
+      'rubik': {
+        'title': 'Rubik Scanner',
+        'desc': 'Over winter break of my junior year, I found my old Rubik\'s cube that I used for speedcubing years ago. I forgot how to solve it, so I decided to build a website to solve it for me.',
+        'link': 'https://rubikscan.webcam'
       }
     };
 
@@ -186,16 +168,8 @@ $(function() {
       $('#website-modal img').attr('src', 'images/websites/' + webID + '.png');
     };
 
-    $('.launchpad-btn').hover(function() {
-      changeWebModal('launchpad');
-    });
-
     $('.csm-btn').hover(function() {
       changeWebModal('csm');
-    });
-
-    $('.hackin-btn').hover(function() {
-      changeWebModal('hackin');
     });
 
     $('.unrac-btn').hover(function() {
@@ -210,16 +184,12 @@ $(function() {
       changeWebModal('alary');
     });
 
-    $('.sherlock-btn').hover(function() {
-      changeWebModal('sherlock');
+    $('.cp-btn').hover(function() {
+      changeWebModal('cp');
     });
 
-    $('.lab-btn').hover(function() {
-      changeWebModal('lab');
-    });
-
-    $('.fzcf-btn').hover(function() {
-      changeWebModal('fzcf');
+    $('.rubik-btn').hover(function() {
+      changeWebModal('rubik');
     });
   };
 
