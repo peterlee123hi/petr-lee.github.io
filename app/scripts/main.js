@@ -138,7 +138,7 @@ $(function() {
 
       'alary': {
         'title': 'Alary Language',
-        'desc': 'I was requested to make this website for an official club at UC Berkeley. Alary Language focuses on connecting students who are passionate about learning and teaching languages. The club provides a more personal language learning experience with companionship. This website was made in a single day.',
+        'desc': 'I made the website for an official club at UC Berkeley that focuses on connecting students who are passionate about learning and teaching languages. The club provides a more personal language learning experience with companionship.',
         'link': 'https://peterlee.tech/AlaryLanguage'
       },
 
