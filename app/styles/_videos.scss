@@ -1,6 +1,9 @@
 #videos {
 	text-align: center;
 	@media #{$small-and-down} {
+		.video-container {
+			margin-bottom: 1.4em;
+		}
 
 		h4 {
 			font-size: 1.6rem;
