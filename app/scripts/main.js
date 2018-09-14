@@ -16,7 +16,7 @@ $(function() {
     });
 
     setTimeout(function() {
-      $('main div h1').addClass('animated fadeInUp'); 
+      $('main div h1').addClass('animated fadeInUp');
     }, 500);
     setTimeout(function() {
       $('main div h2').addClass('animated fadeInUp');
@@ -41,7 +41,7 @@ $(function() {
 
   /*** NAV LINKS ***/
   var links = function() {
-    $('a[href*="#"]:not([href="#"]):not([href="#about-modal"]):not([href="#website-modal"])').click(function() {
+    $('a[href*="#"]:not([href="#"]):not([href="#about-modal"]):not([href="#website-modal"]):not([href="https://github.com/petr-lee"])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -80,38 +80,38 @@ $(function() {
     });
 
     var options = [
-      { selector: '#microsoft-video', 
-        offset: 100, 
+      { selector: '#microsoft-video',
+        offset: 100,
         callback: function() {
           $('#microsoft-video').addClass('animated fadeInLeft');
         }
-      }, 
-      { selector: '#microsoft-desc', 
-        offset: 100, 
+      },
+      { selector: '#microsoft-desc',
+        offset: 100,
         callback: function() {
           $('#microsoft-desc').addClass('animated fadeInRight');
         }
       },
-      { selector: '#sherlock-video', 
-        offset: 100, 
+      { selector: '#sherlock-video',
+        offset: 100,
         callback: function() {
           $('#sherlock-video').addClass('animated fadeInLeft');
         }
-      }, 
-      { selector: '#sherlock-desc', 
-        offset: 100, 
+      },
+      { selector: '#sherlock-desc',
+        offset: 100,
         callback: function() {
           $('#sherlock-desc').addClass('animated fadeInRight');
         }
       },
-      { selector: '#ai-video', 
-        offset: 100, 
+      { selector: '#ai-video',
+        offset: 100,
         callback: function() {
           $('#ai-video').addClass('animated fadeInLeft');
         }
-      }, 
-      { selector: '#ai-desc', 
-        offset: 100, 
+      },
+      { selector: '#ai-desc',
+        offset: 100,
         callback: function() {
           $('#ai-desc').addClass('animated fadeInRight');
         }
