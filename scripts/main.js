@@ -143,6 +143,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     return e;
   }) : 'undefined' != typeof module && module.exports ? module.exports = e : window.ScrollReveal = e;
 }();
+//# sourceMappingURL=scrollreveal.js.map
+
 'use strict';
 
 var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -355,6 +357,8 @@ var _typeof = typeof Symbol === 'function' && _typeof2(Symbol.iterator) === 'sym
   }(window, window.document);return e;
 });
 //# sourceMappingURL=masonry.js.map
+//# sourceMappingURL=masonry.js.map
+
 'use strict';
 
 $(function () {
@@ -400,7 +404,7 @@ $(function () {
 
   /*** NAV LINKS ***/
   var links = function links() {
-    $('a[href*="#"]:not([href="#"]):not([href="#about-modal"]):not([href="#website-modal"])').click(function () {
+    $('a[href*="#"]:not([href="#"]):not([href="#about-modal"]):not([href="#website-modal"]):not([href="https://github.com/petr-lee"])').click(function () {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -549,3 +553,4 @@ $(function () {
   scrolling();
   webModal();
 });
+//# sourceMappingURL=main.js.map
